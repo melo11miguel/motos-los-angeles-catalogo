@@ -67,9 +67,9 @@ const CASCOS = [
 
   { id: "shaft502-gris",  nombre: "SHAFT 502", version: "Blanco / Gris", precio: 350000, categoria: "integral", marca: "SHAFT", img: "IMG_8395.webp", destacado: true },
   { id: "shaft598-neon",  nombre: "SHAFT 598 GTR", version: "Gris / Neón", precio: 450000, categoria: "integral", marca: "SHAFT", img: "IMG_8407.webp" },
-  { id: "hro502-verde",   nombre: "HRO", version: "Verde Militar Mate", precio: 320000, categoria: "integral", marca: "HRO", img: "IMG_8396.webp" },
+  { id: "shaft502-negro", nombre: "SHAFT 502", version: "Negro / Rosa", precio: 350000, categoria: "integral", marca: "SHAFT", img: "IMG_8396.webp" },
   { id: "xtrong-bco",     nombre: "XTRONG", version: "Blanco Perla", precio: 400000, categoria: "integral", marca: "XTRONG", img: "IMG_8397.webp" },
-  { id: "shaft526-mor",   nombre: "SHAFT 526", version: "Street Racing Morado", precio: 420000, categoria: "integral", marca: "SHAFT", img: "IMG_8400.webp" },
+  { id: "shaft526-mor",   nombre: "SHAFT PRO SERIES", version: "Street Racing Morado", precio: 420000, categoria: "integral", marca: "SHAFT", img: "IMG_8400.webp" },
   { id: "shaft526-azul",  nombre: "SHAFT 526", version: "Azul / Blanco", precio: 420000, categoria: "integral", marca: "SHAFT", img: "IMG_8403.webp" },
   { id: "shaft610-pro",   nombre: "SHAFT PRO 610", version: "Pro Series", precio: 550000, categoria: "integral", marca: "SHAFT", img: "IMG_8402.webp", destacado: true },
   { id: "shaft610-multi", nombre: "SHAFT PRO 610", version: "Multicolor", precio: 550000, categoria: "integral", marca: "SHAFT", img: "IMG_8406.webp" },
