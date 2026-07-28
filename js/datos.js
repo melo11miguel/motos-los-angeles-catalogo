@@ -70,7 +70,7 @@ const CASCOS = [
   { id: "shaft502-negro", nombre: "SHAFT 502", version: "Negro / Rosa", precio: 350000, categoria: "integral", marca: "SHAFT", img: "IMG_8396.webp" },
   { id: "xtrong-bco",     nombre: "XTRONG", version: "Blanco Perla", precio: 400000, categoria: "integral", marca: "XTRONG", img: "IMG_8397.webp" },
   { id: "shaft526-mor",   nombre: "SHAFT PRO SERIES", version: "Street Racing Morado", precio: 420000, categoria: "integral", marca: "SHAFT", img: "IMG_8400.webp" },
-  { id: "shaft526-azul",  nombre: "SHAFT 526", version: "Azul / Blanco", precio: 420000, categoria: "integral", marca: "SHAFT", img: "IMG_8403.webp" },
+  { id: "shaft526-azul",  nombre: "SHAFT PRO SERIES", version: "Azul / Blanco", precio: 420000, categoria: "integral", marca: "SHAFT", img: "IMG_8403.webp" },
   { id: "shaft610-pro",   nombre: "SHAFT PRO 610", version: "Pro Series", precio: 550000, categoria: "integral", marca: "SHAFT", img: "IMG_8402.webp", destacado: true },
   { id: "shaft610-multi", nombre: "SHAFT PRO 610", version: "Multicolor", precio: 550000, categoria: "integral", marca: "SHAFT", img: "IMG_8406.webp" },
   { id: "shaft609",       nombre: "SHAFT PRO Venon 609", version: "Astro Azul", precio: 500000, categoria: "integral", marca: "SHAFT", img: "IMG_8404.webp" },
