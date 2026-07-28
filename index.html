@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motos Los Ángeles · Catálogo de Cascos</title>
+<meta name="description" content="Catálogo de cascos certificados — abiertos, abatibles e integrales. Motos Los Ángeles.">
+<meta name="theme-color" content="#0b0c0e">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏍️</text></svg>">
+</head>
+<body>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div class="preloader" id="preloader">
+  <div class="preloader__mark">
+    <svg viewBox="0 0 120 120" class="preloader__ring">
+      <circle cx="60" cy="60" r="52" class="ring-bg"/>
+      <circle cx="60" cy="60" r="52" class="ring-fg"/>
+    </svg>
+    <span class="preloader__pct" id="preloaderPct">0</span>
+  </div>
+  <p class="preloader__txt">CARGANDO CATÁLOGO</p>
+</div>
+
+<!-- ══════════ BARRA DE PROGRESO ══════════ -->
+<div class="scrollbar" id="scrollbar"></div>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav" id="nav">
+  <a href="#inicio" class="nav__brand">
+    <span class="nav__logo" aria-hidden="true">
+      <svg viewBox="0 0 100 60">
+        <g id="wingL">
+          <path d="M40 26C32 22 22 23 8 16C20 20 30 20 39 30Z"/>
+          <path d="M38 33C28 31 16 34 2 30C15 35 27 37 37 40Z"/>
+          <path d="M36 41C24 42 12 47 1 45C13 50 26 51 35 48Z"/>
+        </g>
+        <use href="#wingL" transform="translate(100,0) scale(-1,1)"/>
+        <circle cx="50" cy="36" r="11"/>
+        <circle cx="50" cy="36" r="6.5" class="hole"/>
+      </svg>
+    </span>
+    <span class="nav__name">
+      <b>MOTOS</b><i>LOS ÁNGELES</i>
+    </span>
+  </a>
+  <nav class="nav__links">
+    <a href="#catalogo">Catálogo</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <button class="nav__burger" id="burger" aria-label="Menú"><span></span><span></span></button>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="inicio">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__streaks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="hero__inner">
+    <p class="hero__kicker"><span class="dot"></span>CATÁLOGO <span id="anioHero">2026</span> · CASCOS CERTIFICADOS</p>
+
+    <h1 class="hero__title">
+      <span class="line"><span>PROTECCIÓN</span></span>
+      <span class="line"><span class="accent">QUE SE SIENTE</span></span>
+    </h1>
+
+    <p class="hero__sub">Abiertos, abatibles e integrales. Precios de mostrador y stock real en tienda.</p>
+
+    <div class="hero__cta">
+      <a href="#catalogo" class="btn btn--primary">Ver catálogo <svg viewBox="0 0 24 24" class="ico"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#contacto" class="btn btn--ghost">Cómo llegar</a>
+    </div>
+
+    <div class="hero__stats">
+      <div class="stat"><b class="cnt" data-to="0">0</b><span>Modelos</span></div>
+      <div class="stat"><b class="cnt" data-to="0">0</b><span>Marcas</span></div>
+      <div class="stat"><b>100<i>%</i></b><span>Certificados</span></div>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true"><span></span>DESLIZA</div>
+</section>
+
+<!-- ══════════ CONTROLES ══════════ -->
+<div class="toolbar" id="toolbar">
+  <div class="toolbar__inner">
+    <label class="search">
+      <svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="buscar" placeholder="Buscar por modelo o marca…" autocomplete="off">
+      <button type="button" class="search__x" id="limpiar" aria-label="Limpiar">×</button>
+    </label>
+
+    <div class="chips" id="chipsCat">
+      <button class="chip on" data-cat="todos">TODOS</button>
+      <button class="chip" data-cat="integral">INTEGRAL</button>
+      <button class="chip" data-cat="abierto">ABIERTO</button>
+      <button class="chip" data-cat="abatible">ABATIBLE</button>
+    </div>
+
+    <div class="select">
+      <select id="orden" aria-label="Ordenar">
+        <option value="def">Orden sugerido</option>
+        <option value="asc">Precio: menor a mayor</option>
+        <option value="desc">Precio: mayor a menor</option>
+        <option value="az">Nombre A–Z</option>
+      </select>
+      <svg viewBox="0 0 24 24" class="ico"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ══════════ CATÁLOGO ══════════ -->
+  <section class="seccion" id="catalogo">
+    <div class="seccion__head reveal">
+      <span class="seccion__num">01</span>
+      <div>
+        <h2 class="seccion__title">Catálogo <em>de</em> Cascos</h2>
+        <p class="seccion__desc">Acá encuentras algunos de los modelos que manejamos, pero en bodega contamos con muchos más. ¿Buscas un casco en especial? <a href="#" id="waCatalogo" class="seccion__link">Charla con nosotros</a> y lo conseguimos.</p>
+      </div>
+      <span class="seccion__count" id="count1">—</span>
+    </div>
+
+    <div class="grid" id="grid1"></div>
+    <p class="vacio" id="vacio1" hidden>Sin resultados para tu búsqueda.</p>
+  </section>
+
+  <!-- ══════════ FRANJA ══════════ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>MOTOS LOS ÁNGELES ✦ CASCOS CERTIFICADOS ✦ SHAFT ✦ LS2 ✦ EDGE ✦ ICH ✦ VOSSDOT ✦ XSPORTS ✦ XONE ✦ SPARTAN ✦</span>
+      <span>MOTOS LOS ÁNGELES ✦ CASCOS CERTIFICADOS ✦ SHAFT ✦ LS2 ✦ EDGE ✦ ICH ✦ VOSSDOT ✦ XSPORTS ✦ XONE ✦ SPARTAN ✦</span>
+    </div>
+  </div>
+
+  <!-- ══════════ CONTACTO ══════════ -->
+  <section class="contacto" id="contacto">
+    <div class="contacto__bg" aria-hidden="true"></div>
+    <div class="contacto__inner reveal">
+      <p class="hero__kicker"><span class="dot"></span>VISÍTANOS</p>
+      <h2 class="contacto__title">¿Listo para tu<br><span class="accent">próximo casco?</span></h2>
+      <p class="contacto__desc">Pruébatelo en tienda. Te asesoramos con la talla, el tipo de casco y el uso que le vas a dar.</p>
+      <div class="contacto__cta">
+        <a href="#" class="btn btn--primary" id="waGeneral">
+          <svg viewBox="0 0 24 24" class="ico ico--fill"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1a12 12 0 0 1-6.2-5.4c-.5-.8-.8-1.7-.8-2.5 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.9 1.6 2 2.7 2.5.3.2.5.1.6 0l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.4.4v.9Z"/></svg>
+          Escríbenos por WhatsApp
+        </a>
+      </div>
+      <dl class="contacto__datos">
+        <div><dt>Horario</dt><dd id="cHorario">—</dd></div>
+        <div><dt>Dirección</dt><dd id="cDir">—</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <span>© <b id="anio">2026</b> Motos Los Ángeles</span>
+  <span class="pie__nota">Precios sujetos a cambio sin previo aviso · Disponibilidad según stock</span>
+</footer>
+
+<!-- ══════════ LIGHTBOX ══════════ -->
+<div class="lb" id="lb" hidden>
+  <button class="lb__x" id="lbX" aria-label="Cerrar">×</button>
+  <button class="lb__nav lb__nav--prev" id="lbPrev" aria-label="Anterior">‹</button>
+  <button class="lb__nav lb__nav--next" id="lbNext" aria-label="Siguiente">›</button>
+  <figure class="lb__fig">
+    <img id="lbImg" alt="">
+    <figcaption class="lb__cap">
+      <div>
+        <h3 id="lbNombre"></h3>
+        <p id="lbVersion"></p>
+      </div>
+      <div class="lb__right">
+        <b id="lbPrecio"></b>
+        <a href="#" class="btn btn--primary btn--sm" id="lbWa">Cotizar</a>
+      </div>
+    </figcaption>
+  </figure>
+</div>
+
+<a href="#" class="fab" id="fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" class="ico ico--fill"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1a12 12 0 0 1-6.2-5.4c-.5-.8-.8-1.7-.8-2.5 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.9 1.6 2 2.7 2.5.3.2.5.1.6 0l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.4.4v.9Z"/></svg>
+</a>
+
+<script src="js/datos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
