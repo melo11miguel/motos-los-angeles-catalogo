@@ -65,10 +65,10 @@ const CASCOS = [
   { id: "m57-mate",       nombre: "XSPORTS M57", version: "Negro Mate", precio: 350000, categoria: "integral", marca: "XSPORTS", img: "IMG_8401.webp" },
   { id: "m57-iridium",    nombre: "XSPORTS M57", version: "Iridium", precio: 350000, categoria: "integral", marca: "XSPORTS", img: "IMG_8410.webp" },
 
-  { id: "shaft598-gris",  nombre: "SHAFT 598 GTR", version: "Blanco / Gris", precio: 450000, categoria: "integral", marca: "SHAFT", img: "IMG_8395.webp", destacado: true },
+  { id: "shaft502-gris",  nombre: "SHAFT 502", version: "Blanco / Gris", precio: 350000, categoria: "integral", marca: "SHAFT", img: "IMG_8395.webp", destacado: true },
   { id: "shaft598-neon",  nombre: "SHAFT 598 GTR", version: "Gris / Neón", precio: 450000, categoria: "integral", marca: "SHAFT", img: "IMG_8407.webp" },
   { id: "hro502-verde",   nombre: "HRO", version: "Verde Militar Mate", precio: 320000, categoria: "integral", marca: "HRO", img: "IMG_8396.webp" },
-  { id: "hro502-bco",     nombre: "HRO", version: "Blanco Perla", precio: 320000, categoria: "integral", marca: "HRO", img: "IMG_8397.webp" },
+  { id: "xtrong-bco",     nombre: "XTRONG", version: "Blanco Perla", precio: 400000, categoria: "integral", marca: "XTRONG", img: "IMG_8397.webp" },
   { id: "shaft526-mor",   nombre: "SHAFT 526", version: "Street Racing Morado", precio: 420000, categoria: "integral", marca: "SHAFT", img: "IMG_8400.webp" },
   { id: "shaft526-azul",  nombre: "SHAFT 526", version: "Azul / Blanco", precio: 420000, categoria: "integral", marca: "SHAFT", img: "IMG_8403.webp" },
   { id: "shaft610-pro",   nombre: "SHAFT PRO 610", version: "Pro Series", precio: 550000, categoria: "integral", marca: "SHAFT", img: "IMG_8402.webp", destacado: true },
