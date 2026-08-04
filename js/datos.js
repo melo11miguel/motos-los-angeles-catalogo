@@ -117,12 +117,12 @@ const GUANTES = [
   { id: "fox-prot-gris",  nombre: "FOX Protección", version: "Gris / Negro", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8304.webp" },
   { id: "fox-prot-rosa",  nombre: "FOX Protección", version: "Rosa / Negro", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8305.webp" },
 
-  { id: "city-neon",      nombre: "CITY Semi", version: "Verde Neón", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8548.webp", destacado: true },
-  { id: "city-colores",   nombre: "CITY Semi", version: "Surtido de colores", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8551.webp" },
-  { id: "city-gris",      nombre: "CITY Semi", version: "Gris / Morado / Rosa", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8552.webp" },
+  { id: "city-neon",      nombre: "City (semi impermeable)", version: "Verde Neón", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8548.webp", destacado: true },
+  { id: "city-colores",   nombre: "City (semi impermeable)", version: "Surtido de colores", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8551.webp" },
+  { id: "city-gris",      nombre: "City (semi impermeable)", version: "Gris / Morado / Rosa", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8552.webp" },
 
-  { id: "suomy11-rosa",   nombre: "SUOMY 11", version: "Rosa / Negro", precio: 60000, categoria: "tela", marca: "SUOMY", img: "IMG_8553.webp" },
-  { id: "suomy11-color",  nombre: "SUOMY 11", version: "Surtido de colores", precio: 60000, categoria: "tela", marca: "SUOMY", img: "IMG_8554.webp" },
+  { id: "suomy11-rosa",   nombre: "SUOMY / AXE", version: "Rosa / Negro", precio: 43000, categoria: "tela", marca: "SUOMY", img: "IMG_8553.webp" },
+  { id: "suomy11-color",  nombre: "SUOMY / AXE", version: "Surtido de colores", precio: 43000, categoria: "tela", marca: "SUOMY", img: "IMG_8554.webp" },
   { id: "suomy19",        nombre: "SUOMY 19", version: "Negro Racing", precio: 60000, categoria: "tela", marca: "SUOMY", img: "IMG_8587.webp" },
 
   { id: "motowolf-negro", nombre: "MOTOWOLF", version: "Negro", precio: 55000, categoria: "tela", marca: "MOTOWOLF", img: "IMG_8556.webp" },
