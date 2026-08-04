@@ -117,15 +117,11 @@ const GUANTES = [
   { id: "fox-prot-gris",  nombre: "FOX Protección", version: "Gris / Negro", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8304.webp" },
   { id: "fox-prot-rosa",  nombre: "FOX Protección", version: "Rosa / Negro", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8305.webp" },
 
-  { id: "city-neon",      nombre: "City (semi impermeable)", version: "Verde Neón", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8548.webp", destacado: true },
   { id: "city-colores",   nombre: "City (semi impermeable)", version: "Surtido de colores", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8551.webp" },
   { id: "city-gris",      nombre: "City (semi impermeable)", version: "Gris / Morado / Rosa", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8552.webp" },
 
-  { id: "suomy11-rosa",   nombre: "SUOMY / AXE", version: "Rosa / Negro", precio: 43000, categoria: "tela", marca: "SUOMY", img: "IMG_8553.webp" },
-  { id: "suomy11-color",  nombre: "SUOMY / AXE", version: "Surtido de colores", precio: 43000, categoria: "tela", marca: "SUOMY", img: "IMG_8554.webp" },
   { id: "suomy19",        nombre: "SUOMY 19", version: "Negro Racing", precio: 60000, categoria: "tela", marca: "SUOMY", img: "IMG_8587.webp" },
 
-  { id: "motowolf-negro", nombre: "MOTOWOLF", version: "Negro", precio: 55000, categoria: "tela", marca: "MOTOWOLF", img: "IMG_8556.webp" },
   { id: "motowolf-rosa",  nombre: "MOTOWOLF", version: "Negro / Rosa", precio: 55000, categoria: "tela", marca: "MOTOWOLF", img: "IMG_8557.webp" },
 
   { id: "rsspurtt",       nombre: "RSSPURTT", version: "Verde Neón / Rosa", precio: 55000, categoria: "tela", marca: "RSSPURTT", img: "IMG_8567.webp" },
@@ -160,10 +156,7 @@ const GUANTES = [
   { id: "maranata-larga", nombre: "MARANATA Caña Larga", version: "Rosa / Negro / Gris", precio: 110000, categoria: "cuero", marca: "MARANATA", img: "IMG_8585.webp", destacado: true },
   { id: "maranata-rosa",  nombre: "MARANATA Cuero", version: "Rosa / Negro", precio: 85000, categoria: "cuero", marca: "MARANATA", img: "IMG_8573.webp" },
   { id: "maranata-amar",  nombre: "MARANATA Cuero", version: "Amarillo / Morado", precio: 85000, categoria: "cuero", marca: "MARANATA", img: "IMG_8574.webp" },
-  { id: "maranata-3col",  nombre: "MARANATA Cuero", version: "Rosa / Negro / Morado", precio: 85000, categoria: "cuero", marca: "MARANATA", img: "IMG_8577.webp" },
 
-  { id: "fox-cuero1",     nombre: "FOX Cuero Caña Larga", version: "Negro / Rosa", precio: 85000, categoria: "cuero", marca: "FOX", img: "IMG_8578.webp" },
-  { id: "fox-cuero2",     nombre: "FOX Cuero Caña Larga", version: "Negro / Morado", precio: 85000, categoria: "cuero", marca: "FOX", img: "IMG_8579.webp" },
   { id: "fox-cuero3",     nombre: "FOX Cuero Caña Larga", version: "Surtido", precio: 85000, categoria: "cuero", marca: "FOX", img: "IMG_8580.webp" },
   { id: "fox-bomper1",    nombre: "FOX Bomper", version: "Naranja / Verde", precio: 80000, categoria: "cuero", marca: "FOX", img: "IMG_8581.webp" },
   { id: "fox-bomper2",    nombre: "FOX Bomper", version: "Morado / Blanco / Rosa", precio: 80000, categoria: "cuero", marca: "FOX", img: "IMG_8596.webp" },
