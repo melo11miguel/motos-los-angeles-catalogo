@@ -10,16 +10,41 @@
   const menosMovimiento = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------------------------------------------------------------- Datos */
-  const inventario = CASCOS.filter(c => c.activo !== false);
-
-  const ETIQUETA = { abierto: 'ABIERTO', abatible: 'ABATIBLE', integral: 'INTEGRAL' };
-
-  /* Iconos por tipo de casco, dibujados a mano en SVG */
-  const ICONO = {
+  const ICONO_CASCO = {
     abierto:  '<svg viewBox="0 0 24 24"><path d="M4 15a8 8 0 0 1 16 0v2H4v-2Z"/><path d="M4 17h9"/></svg>',
     abatible: '<svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0v3H4v-3Z"/><path d="M4 16h11l3 3"/><path d="M15.5 8.5 19 5"/></svg>',
     integral: '<svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 16 0v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6Z"/><path d="M4 13h9a3 3 0 0 1 3 3v4"/></svg>',
   };
+  const ICONO_GUANTE = {
+    tela:        '<svg viewBox="0 0 24 24"><path d="M6 10V5a1.5 1.5 0 0 1 3 0v5m0 0V4a1.5 1.5 0 0 1 3 0v6m0 0V5a1.5 1.5 0 0 1 3 0v5m0 1V8.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a7 7 0 0 1-7-7v-3a1.5 1.5 0 0 1 3 0"/></svg>',
+    cuero:       '<svg viewBox="0 0 24 24"><path d="M6 10V5a1.5 1.5 0 0 1 3 0v5m0 0V4a1.5 1.5 0 0 1 3 0v6m0 0V5a1.5 1.5 0 0 1 3 0v5m0 1V8.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a7 7 0 0 1-7-7v-3a1.5 1.5 0 0 1 3 0"/><path d="M8.5 15.5h6"/></svg>',
+    impermeable: '<svg viewBox="0 0 24 24"><path d="M12 3s5.5 6 5.5 9.5a5.5 5.5 0 0 1-11 0C6.5 9 12 3 12 3Z"/></svg>',
+    medio:       '<svg viewBox="0 0 24 24"><path d="M6 11V8.5a1.5 1.5 0 0 1 3 0V11m0 0V8a1.5 1.5 0 0 1 3 0v3m0 0V8.5a1.5 1.5 0 0 1 3 0V11m0 1V9.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a7 7 0 0 1-7-7v-2a1.5 1.5 0 0 1 3 0"/></svg>',
+  };
+
+  /* Cada producto define su carpeta de fotos, sus etiquetas y sus iconos */
+  const PRODUCTOS = {
+    cascos: {
+      lista: CASCOS.filter(c => c.activo !== false),
+      carpeta: 'cascos/',
+      etiqueta: { abierto: 'ABIERTO', abatible: 'ABATIBLE', integral: 'INTEGRAL' },
+      icono: ICONO_CASCO,
+      singular: 'casco',
+      titulo: 'Catálogo <em>de</em> Cascos',
+    },
+    guantes: {
+      lista: GUANTES.filter(c => c.activo !== false),
+      carpeta: 'guantes/',
+      etiqueta: { tela: 'TELA', cuero: 'CUERO', impermeable: 'IMPERMEABLE', medio: 'MEDIO DEDO' },
+      icono: ICONO_GUANTE,
+      singular: 'guante',
+      titulo: 'Catálogo <em>de</em> Guantes',
+    },
+  };
+
+  let producto = PRODUCTOS.cascos;
+  const inventario = () => producto.lista;
+  const ETIQUETA = () => producto.etiqueta;
 
   const precioCOP = n =>
     n == null ? 'Por definir' : '$' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -30,7 +55,7 @@
      imagen ya embebida en base64. En la versión local con carpeta /img,
      window.FOTOS no existe y simplemente se usa la ruta relativa. */
   const FOTOS = (typeof window !== 'undefined' && window.FOTOS) || {};
-  const srcDe = img => img ? (FOTOS[img] || ('img/' + img)) : SIN_FOTO;
+  const srcDe = img => img ? (FOTOS[img] || (producto.carpeta + img)) : SIN_FOTO;
 
   /* Placeholder para referencias del Excel que aún no tienen foto */
   const SIN_FOTO = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
@@ -43,14 +68,14 @@
   <text x="300" y="600" text-anchor="middle" font-family="ui-monospace,monospace" font-size="22" letter-spacing="5" fill="#5b6270">FALTA FOTO</text>
 </svg>`);
 
-  const enlaceWA = casco => {
+  const enlaceWA = art => {
     const base = 'https://wa.me/' + NEGOCIO.whatsapp + '?text=';
-    const precioTxt = casco && casco.precio != null
-      ? `— ${precioCOP(casco.precio)}.`
+    const precioTxt = art && art.precio != null
+      ? `— ${precioCOP(art.precio)}.`
       : `(precio a confirmar).`;
-    const txt = casco
-      ? `Hola *${NEGOCIO.nombre}* 👋\nMe interesa el casco *${casco.nombre}* (${casco.version}) ${precioTxt}\n¿Está disponible y en qué tallas?`
-      : `Hola *${NEGOCIO.nombre}* 👋\nQuisiera información sobre los cascos del catálogo.`;
+    const txt = art
+      ? `Hola *${NEGOCIO.nombre}* 👋\nMe interesa el ${producto.singular} *${art.nombre}* (${art.version}) ${precioTxt}\n¿Está disponible y en qué tallas?`
+      : `Hola *${NEGOCIO.nombre}* 👋\nQuisiera información sobre el catálogo.`;
     return base + encodeURIComponent(txt);
   };
 
@@ -75,7 +100,7 @@
 
   /* Precarga las primeras imágenes para que el catálogo no aparezca vacío */
   function precargar() {
-    const primeras = inventario.slice(0, 12).map(c => srcDe(c.img));
+    const primeras = inventario().slice(0, 12).map(c => srcDe(c.img));
     if (!primeras.length) return cerrarPreloader();
 
     let listas = 0;
@@ -112,14 +137,14 @@
 
     el.innerHTML = `
       <div class="card__media">
-        <img class="card__img" src="${srcDe(c.img)}" alt="Casco ${c.nombre} ${c.version}" loading="lazy" decoding="async">
+        <img class="card__img" src="${srcDe(c.img)}" alt="${c.nombre} ${c.version}" loading="lazy" decoding="async">
         <div class="card__badges">
           ${c.pendiente ? '<span class="badge badge--pend">FALTA FOTO</span>' : ''}
           ${c.destacado ? '<span class="badge badge--acc">DESTACADO</span>' : ''}
           ${c.nino ? '<span class="badge badge--kid">NIÑO</span>' : ''}
-          <span class="badge">${ETIQUETA[c.categoria]}</span>
+          <span class="badge">${ETIQUETA()[c.categoria]}</span>
         </div>
-        <span class="card__tipo" title="${ETIQUETA[c.categoria]}">${ICONO[c.categoria]}</span>
+        <span class="card__tipo" title="${ETIQUETA()[c.categoria]}">${producto.icono[c.categoria]}</span>
         <span class="card__zoom">${c.pendiente ? 'SIN FOTO' : 'VER FOTO'}</span>
       </div>
       <div class="card__body">
@@ -175,7 +200,7 @@
 
     if (q) {
       r = r.filter(c =>
-        (c.nombre + ' ' + c.version + ' ' + c.marca + ' ' + ETIQUETA[c.categoria])
+        (c.nombre + ' ' + c.version + ' ' + c.marca + ' ' + ETIQUETA()[c.categoria])
           .toLowerCase().includes(q));
     }
     if (estado.cat !== 'todos') r = r.filter(c => c.categoria === estado.cat);
@@ -193,7 +218,7 @@
   let visibles = [];
 
   function pintar() {
-    visibles = filtrar(inventario);
+    visibles = filtrar(inventario());
 
     grid1.replaceChildren(...visibles.map(tarjeta));
     vacio1.hidden = visibles.length > 0;
@@ -243,9 +268,9 @@
     const c = visibles[lbIdx];
     if (!c) return;
     $('#lbImg').src = srcDe(c.img);
-    $('#lbImg').alt = `Casco ${c.nombre} ${c.version}`;
+    $('#lbImg').alt = `${c.nombre} ${c.version}`;
     $('#lbNombre').textContent = c.nombre;
-    $('#lbVersion').textContent = `${c.version} · ${ETIQUETA[c.categoria]}`;
+    $('#lbVersion').textContent = `${c.version} · ${ETIQUETA()[c.categoria]}`;
     $('#lbPrecio').innerHTML = precioHTML(c.precio);
     $('#lbWa').href = enlaceWA(c);
   }
@@ -285,12 +310,42 @@
   }, { passive: true });
 
   /* ------------------------------------------------------ Filtro categoría */
-  $$('#chipsCat .chip').forEach(b => {
-    b.onclick = () => {
-      estado.cat = b.dataset.cat;
-      $$('#chipsCat .chip').forEach(x => x.classList.toggle('on', x === b));
-      pintar();
-    };
+  /* Los botones de filtro se regeneran según el producto activo, porque
+     cascos y guantes no comparten las mismas categorías. */
+  function pintarChips() {
+    const cats = ['todos', ...Object.keys(producto.etiqueta)];
+    $('#chipsCat').replaceChildren(...cats.map(cat => {
+      const b = document.createElement('button');
+      b.className = 'chip' + (cat === estado.cat ? ' on' : '');
+      b.dataset.cat = cat;
+      b.textContent = cat === 'todos' ? 'TODOS' : producto.etiqueta[cat];
+      b.onclick = () => {
+        estado.cat = cat;
+        $$('#chipsCat .chip').forEach(x => x.classList.toggle('on', x === b));
+        pintar();
+      };
+      return b;
+    }));
+  }
+
+  /* -------------------------------------------------- Cambio de producto */
+  function cambiarProducto(clave) {
+    if (producto === PRODUCTOS[clave]) return;
+    producto = PRODUCTOS[clave];
+    estado.cat = 'todos';
+    estado.texto = '';
+    inputBuscar.value = '';
+    $('.search').classList.remove('filled');
+    $('#tituloSeccion').innerHTML = producto.titulo;
+    $$('#tabsProducto .tabprod').forEach(t =>
+      t.classList.toggle('on', t.dataset.prod === clave));
+    pintarChips();
+    pintar();
+    actualizarStats();
+  }
+
+  $$('#tabsProducto .tabprod').forEach(t => {
+    t.onclick = () => cambiarProducto(t.dataset.prod);
   });
 
   /* ------------------------------------------------------------- Controles */
@@ -362,11 +417,21 @@
   $('#fab').href = enlaceWA(null);
   $('#waCatalogo').href = enlaceWA(null);
 
+  /* El hero cuenta el total de todo el catálogo, no solo del producto activo */
   const stats = $$('.hero__stats .cnt');
-  stats[0].dataset.to = inventario.length;
-  stats[1].dataset.to = new Set(inventario.map(c => c.marca)).size;
+  const TODO = [...PRODUCTOS.cascos.lista, ...PRODUCTOS.guantes.lista];
+  stats[0].dataset.to = TODO.length;
+  stats[1].dataset.to = new Set(TODO.map(c => c.marca)).size;
+
+  function actualizarStats() {
+    $('#waGeneral').href = enlaceWA(null);
+    $('#fab').href = enlaceWA(null);
+    $('#waCatalogo').href = enlaceWA(null);
+  }
 
   /* ------------------------------------------------------------- Arranque */
+  $('#tituloSeccion').innerHTML = producto.titulo;
+  pintarChips();
   pintar();
   precargar();
   alScroll();

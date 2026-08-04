@@ -1,15 +1,19 @@
 /* ============================================================================
-   MOTOS LOS ÁNGELES · Catálogo de Cascos
+   MOTOS LOS ÁNGELES · Catálogo
    ---------------------------------------------------------------------------
    ESTE ES EL ÚNICO ARCHIVO QUE NECESITAS EDITAR.
 
    Para cambiar un precio  -> edita el número en "precio" (sin puntos ni $).
    Para cambiar un nombre  -> edita "nombre".
-   Para agregar un casco   -> copia un bloque { ... }, y pega la foto .webp
-                              dentro de la carpeta /img.
-   Para ocultar un casco   -> agrega   activo: false,
+   Para agregar algo       -> copia un bloque { ... }, y pega la foto .webp
+                              en la carpeta que corresponda.
+   Para ocultarlo          -> agrega   activo: false,
 
-   categoria: "abierto" | "abatible" | "integral"
+   CASCOS  -> fotos en la carpeta /cascos
+              categoria: "abierto" | "abatible" | "integral"
+
+   GUANTES -> fotos en la carpeta /guantes
+              categoria: "tela" | "cuero" | "impermeable" | "medio"
    ========================================================================= */
 
 /* --- Datos del negocio ---------------------------------------------------- */
@@ -87,4 +91,94 @@ const CASCOS = [
   { id: "voss-morado",    nombre: "VOSSDOT", version: "Negro / Morado", precio: 300000, categoria: "integral", marca: "VOSSDOT", img: "IMG_8423.webp" },
   { id: "voss-multi",     nombre: "VOSSDOT Multipropósito", version: "Carbono", precio: 350000, categoria: "integral", marca: "VOSSDOT", img: "IMG_8424.webp", destacado: true },
   { id: "multi-project",  nombre: "Multipropósito Project", version: "Negro Mate", precio: 280000, categoria: "integral", marca: "PROJECT", img: "IMG_8430.webp" },
+];
+
+
+/* ============================================================================
+   GUANTES · fotos en la carpeta /guantes
+   Precios de motos.xlsx, hoja GUANTES, columna P_salida.
+   categoria: "tela" | "cuero" | "impermeable" | "medio"
+   ========================================================================= */
+const GUANTES = [
+
+  /* ========================= TELA / SEMI ========================= */
+  { id: "fox-naranja",    nombre: "FOX Dirtpaw", version: "Naranja / Negro", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8296.webp", destacado: true },
+  { id: "fox-naranja2",   nombre: "FOX Dirtpaw", version: "Naranja", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8297.webp" },
+  { id: "fox-amarillo",   nombre: "FOX Dirtpaw", version: "Amarillo", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8298.webp" },
+  { id: "fox-azul",       nombre: "FOX Dirtpaw", version: "Azul", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8299.webp" },
+  { id: "fox-rojoazul",   nombre: "FOX Dirtpaw", version: "Rojo / Azul", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8300.webp" },
+  { id: "fox-neon",       nombre: "FOX Dirtpaw", version: "Verde Neón / Gris", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8301.webp" },
+  { id: "fox-rojo",       nombre: "FOX Dirtpaw", version: "Rojo / Negro", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8302.webp" },
+  { id: "fox-rojo2",      nombre: "FOX Dirtpaw", version: "Rojo", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8303.webp" },
+  { id: "fox-multi",      nombre: "FOX Dirtpaw", version: "Multicolor", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8306.webp" },
+  { id: "fox-blanco",     nombre: "FOX Dirtpaw", version: "Blanco / Gris", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8307.webp" },
+  { id: "fox-turquesa",   nombre: "FOX Dirtpaw", version: "Turquesa", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8308.webp" },
+
+  { id: "fox-prot-gris",  nombre: "FOX Protección", version: "Gris / Negro", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8304.webp" },
+  { id: "fox-prot-rosa",  nombre: "FOX Protección", version: "Rosa / Negro", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8305.webp" },
+
+  { id: "city-neon",      nombre: "CITY Semi", version: "Verde Neón", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8548.webp", destacado: true },
+  { id: "city-colores",   nombre: "CITY Semi", version: "Surtido de colores", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8551.webp" },
+  { id: "city-gris",      nombre: "CITY Semi", version: "Gris / Morado / Rosa", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8552.webp" },
+
+  { id: "suomy11-rosa",   nombre: "SUOMY 11", version: "Rosa / Negro", precio: 60000, categoria: "tela", marca: "SUOMY", img: "IMG_8553.webp" },
+  { id: "suomy11-color",  nombre: "SUOMY 11", version: "Surtido de colores", precio: 60000, categoria: "tela", marca: "SUOMY", img: "IMG_8554.webp" },
+  { id: "suomy19",        nombre: "SUOMY 19", version: "Negro Racing", precio: 60000, categoria: "tela", marca: "SUOMY", img: "IMG_8587.webp" },
+
+  { id: "motowolf-negro", nombre: "MOTOWOLF", version: "Negro", precio: 55000, categoria: "tela", marca: "MOTOWOLF", img: "IMG_8556.webp" },
+  { id: "motowolf-rosa",  nombre: "MOTOWOLF", version: "Negro / Rosa", precio: 55000, categoria: "tela", marca: "MOTOWOLF", img: "IMG_8557.webp" },
+
+  { id: "rsspurtt",       nombre: "RSSPURTT", version: "Verde Neón / Rosa", precio: 55000, categoria: "tela", marca: "RSSPURTT", img: "IMG_8567.webp" },
+
+  { id: "alpine-basico",  nombre: "ALPINESTAR", version: "Negro / Rojo", precio: 50000, categoria: "tela", marca: "ALPINESTAR", img: "IMG_8558.webp" },
+  { id: "alpine-3col",    nombre: "ALPINESTAR", version: "Rojo / Negro / Azul", precio: 50000, categoria: "tela", marca: "ALPINESTAR", img: "IMG_8589.webp" },
+
+  { id: "probiker-rosa",  nombre: "PRO BIKER", version: "Rosa / Negro", precio: 35000, categoria: "tela", marca: "PRO BIKER", img: "IMG_8590.webp" },
+  { id: "probiker-rojo",  nombre: "PRO BIKER", version: "Rojo / Negro", precio: 35000, categoria: "tela", marca: "PRO BIKER", img: "IMG_8597.webp" },
+
+  { id: "moster",         nombre: "MOSTER", version: "Verde / Negro", precio: 30000, categoria: "tela", marca: "MOSTER", img: "IMG_8595.webp" },
+  { id: "prius-gtp05",    nombre: "PRIUS GTP05", version: "Negro", precio: 30000, categoria: "tela", marca: "PRIUS", img: "IMG_8592.webp" },
+  { id: "prius-sc06",     nombre: "PRIUS SC06", version: "Rojo / Negro", precio: 45000, categoria: "tela", marca: "PRIUS", img: "IMG_8594.webp" },
+  { id: "madbike",        nombre: "MADBIKE", version: "Negro", precio: 60000, categoria: "tela", marca: "MADBIKE", img: "IMG_8566.webp" },
+  { id: "cremallera",     nombre: "Cremallera Semi", version: "Negro / Rosa", precio: 25000, categoria: "tela", marca: "GENÉRICO", img: "IMG_8565.webp" },
+  { id: "traslucido",     nombre: "TRASLÚCIDO", version: "Holográfico", precio: 65000, categoria: "tela", marca: "VEMAR", img: "IMG_8564.webp" },
+  { id: "peluche",        nombre: "Cuerina Peluche", version: "Negro", precio: 30000, categoria: "tela", marca: "GENÉRICO", img: "IMG_8547.webp" },
+
+  /* ============================ MEDIO DEDO ======================= */
+  { id: "medio-racing",   nombre: "Medio Dedo Racing", version: "Rojo / Azul", precio: 25000, categoria: "medio", marca: "M-RACE", img: "IMG_8599.webp" },
+  { id: "medio-ocle",     nombre: "Medio Dedo OCLE", version: "Verde Militar / Negro", precio: 35000, categoria: "medio", marca: "OCLE", img: "IMG_8600.webp" },
+
+  /* =============================== CUERO ========================= */
+  { id: "alpine-gppro",   nombre: "ALPINESTAR GP PRO", version: "Cuero Negro Caña Larga", precio: 200000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8560.webp", destacado: true },
+  { id: "alpine-gppro2",  nombre: "ALPINESTAR GP PRO", version: "Cuero Negro (detalle)", precio: 200000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8561.webp" },
+  { id: "alpine-sp8",     nombre: "ALPINESTAR SP8", version: "Negro / Blanco / Rojo", precio: 210000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8563.webp" },
+  { id: "alpine-media",   nombre: "ALPINESTAR Caña Media", version: "Cuero Negro", precio: 130000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8562.webp" },
+
+  { id: "dfr-cuero",      nombre: "DFR Cuero", version: "Negro / Azul", precio: 90000, categoria: "cuero", marca: "DFR", img: "IMG_8576.webp" },
+
+  { id: "maranata-cuero", nombre: "MARANATA Cuero", version: "Surtido de colores", precio: 85000, categoria: "cuero", marca: "MARANATA", img: "IMG_8583.webp" },
+  { id: "maranata-larga", nombre: "MARANATA Caña Larga", version: "Rosa / Negro / Gris", precio: 110000, categoria: "cuero", marca: "MARANATA", img: "IMG_8585.webp", destacado: true },
+  { id: "maranata-rosa",  nombre: "MARANATA Cuero", version: "Rosa / Negro", precio: 85000, categoria: "cuero", marca: "MARANATA", img: "IMG_8573.webp" },
+  { id: "maranata-amar",  nombre: "MARANATA Cuero", version: "Amarillo / Morado", precio: 85000, categoria: "cuero", marca: "MARANATA", img: "IMG_8574.webp" },
+  { id: "maranata-3col",  nombre: "MARANATA Cuero", version: "Rosa / Negro / Morado", precio: 85000, categoria: "cuero", marca: "MARANATA", img: "IMG_8577.webp" },
+
+  { id: "fox-cuero1",     nombre: "FOX Cuero Caña Larga", version: "Negro / Rosa", precio: 85000, categoria: "cuero", marca: "FOX", img: "IMG_8578.webp" },
+  { id: "fox-cuero2",     nombre: "FOX Cuero Caña Larga", version: "Negro / Morado", precio: 85000, categoria: "cuero", marca: "FOX", img: "IMG_8579.webp" },
+  { id: "fox-cuero3",     nombre: "FOX Cuero Caña Larga", version: "Surtido", precio: 85000, categoria: "cuero", marca: "FOX", img: "IMG_8580.webp" },
+  { id: "fox-bomper1",    nombre: "FOX Bomper", version: "Naranja / Verde", precio: 80000, categoria: "cuero", marca: "FOX", img: "IMG_8581.webp" },
+  { id: "fox-bomper2",    nombre: "FOX Bomper", version: "Morado / Blanco / Rosa", precio: 80000, categoria: "cuero", marca: "FOX", img: "IMG_8596.webp" },
+
+  { id: "cuero-tex",      nombre: "Cuero Tex Económico", version: "Negro / Rosa", precio: 35000, categoria: "cuero", marca: "GENÉRICO", img: "IMG_8559.webp" },
+
+  /* ========================== IMPERMEABLES ======================= */
+  { id: "imp-traslucido", nombre: "TRASLÚCIDO Impermeable", version: "Negro Touch", precio: 90000, categoria: "impermeable", marca: "GENÉRICO", img: "IMG_8598.webp" },
+  { id: "over-st11",      nombre: "OVER ST11", version: "Negro", precio: 90000, categoria: "impermeable", marca: "OVER", img: "IMG_8607.webp" },
+  { id: "over-holo",      nombre: "OVER Holográfico", version: "Reflectivo", precio: 90000, categoria: "impermeable", marca: "OVER", img: "IMG_8608.webp", destacado: true },
+  { id: "mrace-gm001",    nombre: "MRACE GM001", version: "Rojo / Morado / Verde", precio: 90000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8602.webp" },
+  { id: "mrace-010",      nombre: "MRACE 010", version: "Negro / Verde / Rosa", precio: 130000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8603.webp" },
+  { id: "imp-750",        nombre: "Impermeable 750", version: "Rojo / Azul", precio: 90000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8604.webp" },
+  { id: "mrace-gm22",     nombre: "MRACE Traslúcido GM22", version: "Holográfico", precio: 30000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8605.webp" },
+  { id: "mrace-gm22b",    nombre: "MRACE Traslúcido GM22", version: "Holográfico (par)", precio: 30000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8606.webp" },
+  { id: "puizzance-14",   nombre: "PUIZZANCE WPZ14", version: "Negro", precio: 90000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_8568.webp" },
+  { id: "puizzance-12",   nombre: "PUIZZANCE WPZ12", version: "Negro / Gris", precio: 90000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_8588.webp" },
 ];
