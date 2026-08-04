@@ -161,7 +161,7 @@ const GUANTES = [
   { id: "fox-bomper1",    nombre: "FOX Bomper", version: "Naranja / Verde", precio: 80000, categoria: "cuero", marca: "FOX", img: "IMG_8581.webp" },
   { id: "fox-bomper2",    nombre: "FOX Bomper", version: "Morado / Blanco / Rosa", precio: 80000, categoria: "cuero", marca: "FOX", img: "IMG_8596.webp" },
 
-  { id: "cuero-tex",      nombre: "Cuero Tex Económico", version: "Negro / Rosa", precio: 35000, categoria: "cuero", marca: "GENÉRICO", img: "IMG_8559.webp" },
+  { id: "icon-cuero",     nombre: "ICON Cuero", version: "Negro / Rosa", precio: 80000, categoria: "cuero", marca: "ICON", img: "IMG_8559.webp" },
 
   /* ========================== IMPERMEABLES ======================= */
   { id: "imp-traslucido", nombre: "TRASLÚCIDO Impermeable", version: "Negro Touch", precio: 90000, categoria: "impermeable", marca: "GENÉRICO", img: "IMG_8598.webp" },
