@@ -158,7 +158,7 @@ const GUANTES = [
   { id: "icon-cuero",     nombre: "ICON Cuero", version: "Negro / Rosa", precio: 80000, categoria: "cuero", marca: "ICON", img: "IMG_8559.webp" },
 
   /* ========================== IMPERMEABLES ======================= */
-  { id: "imp-traslucido", nombre: "TRASLÚCIDO Impermeable", version: "Negro Touch", precio: 90000, categoria: "impermeable", marca: "GENÉRICO", img: "IMG_8598.webp" },
+  { id: "cremallera-semi", nombre: "Cremallera Semi", version: "Negro Touch", precio: 25000, categoria: "tela", marca: "HKXY", img: "IMG_8598.webp" },
   { id: "over-st11",      nombre: "OVER ST11", version: "Negro", precio: 90000, categoria: "impermeable", marca: "OVER", img: "IMG_8607.webp" },
   { id: "over-holo",      nombre: "OVER Holográfico", version: "Reflectivo", precio: 90000, categoria: "impermeable", marca: "OVER", img: "IMG_8608.webp", destacado: true },
   { id: "mrace-gm001",    nombre: "MRACE GM001", version: "Rojo / Morado / Verde", precio: 90000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8602.webp" },
