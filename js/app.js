@@ -68,14 +68,17 @@
   <text x="300" y="600" text-anchor="middle" font-family="ui-monospace,monospace" font-size="22" letter-spacing="5" fill="#5b6270">FALTA FOTO</text>
 </svg>`);
 
-  const enlaceWA = art => {
+  /* nDisenos > 1 -> el mensaje no fija un color, porque la tarjeta
+     representa toda la referencia y el cliente aún no eligió diseño. */
+  const enlaceWA = (art, nDisenos = 1) => {
     const base = 'https://wa.me/' + NEGOCIO.whatsapp + '?text=';
-    const precioTxt = art && art.precio != null
-      ? `— ${precioCOP(art.precio)}.`
-      : `(precio a confirmar).`;
-    const txt = art
-      ? `Hola *${NEGOCIO.nombre}* 👋\nMe interesa el ${producto.singular} *${art.nombre}* (${art.version}) ${precioTxt}\n¿Está disponible y en qué tallas?`
-      : `Hola *${NEGOCIO.nombre}* 👋\nQuisiera información sobre el catálogo.`;
+    if (!art) return base + encodeURIComponent(
+      `Hola *${NEGOCIO.nombre}* 👋\nQuisiera información sobre el catálogo.`);
+
+    const precioTxt = art.precio != null ? `— ${precioCOP(art.precio)}.` : `(precio a confirmar).`;
+    const detalle = nDisenos > 1 ? '' : ` (${art.version})`;
+    const txt = `Hola *${NEGOCIO.nombre}* 👋\nMe interesa el ${producto.singular} `
+      + `*${art.nombre}*${detalle} ${precioTxt}\n¿Está disponible y en qué tallas?`;
     return base + encodeURIComponent(txt);
   };
 
@@ -126,14 +129,26 @@
   const grid1 = $('#grid1'), vacio1 = $('#vacio1');
 
   /* --------------------------------------------------------- Render tarjeta */
-  function tarjeta(c, i) {
+  function tarjeta(grupo, i) {
+    const c = grupo.portada;
+    const n = grupo.items.length;
+    // precios distintos dentro de la referencia -> se muestra "desde"
+    const precios = grupo.items.map(x => x.precio).filter(x => x != null);
+    const minimo = precios.length ? Math.min(...precios) : null;
+    const variosPrecios = new Set(precios).size > 1;
+    // línea gris bajo el nombre: con pocos diseños se listan, con muchos se resume
+    const versiones = n > 3
+      ? `${n} colores disponibles`
+      : grupo.items.map(x => x.version).join(' · ');
+
     const el = document.createElement('article');
     el.className = 'card' + (c.pendiente ? ' card--pendiente' : '');
     el.style.setProperty('--d', Math.min(i, 11) * 55 + 'ms');
-    el.dataset.id = c.id;
+    el.dataset.ref = grupo.ref;
     el.tabIndex = 0;
     el.setAttribute('role', 'button');
-    el.setAttribute('aria-label', `${c.nombre} ${c.version}, ${precioCOP(c.precio)}.${c.pendiente ? ' Foto pendiente.' : ' Ver foto grande.'}`);
+    el.setAttribute('aria-label',
+      `${c.nombre}, ${precioCOP(minimo)}. ${n > 1 ? n + ' diseños disponibles.' : ''} Ver fotos.`);
 
     el.innerHTML = `
       <div class="card__media">
@@ -145,32 +160,57 @@
           <span class="badge">${ETIQUETA()[c.categoria]}</span>
         </div>
         <span class="card__tipo" title="${ETIQUETA()[c.categoria]}">${producto.icono[c.categoria]}</span>
-        <span class="card__zoom">${c.pendiente ? 'SIN FOTO' : 'VER FOTO'}</span>
+        ${n > 1 ? `<span class="card__disenos">${n} diseños</span>` : ''}
+        <span class="card__zoom">${c.pendiente ? 'SIN FOTO' : (n > 1 ? 'VER LOS ' + n : 'VER FOTO')}</span>
+        ${n > 1 ? `<div class="card__puntos">${grupo.items.map((_, k) =>
+            `<i class="${k === 0 ? 'on' : ''}"></i>`).join('')}</div>` : ''}
       </div>
       <div class="card__body">
         <p class="card__marca">${c.marca}</p>
         <h3 class="card__nombre">${c.nombre}</h3>
-        <p class="card__version">${c.version}</p>
+        <p class="card__version">${versiones}</p>
         <div class="card__pie">
-          <span class="card__precio"><small>PRECIO</small><b>${precioHTML(c.precio)}</b></span>
-          <a class="card__wa" href="${enlaceWA(c)}" target="_blank" rel="noopener"
+          <span class="card__precio"><small>${variosPrecios ? 'DESDE' : 'PRECIO'}</small><b>${precioHTML(minimo)}</b></span>
+          <a class="card__wa" href="${enlaceWA(c, n)}" target="_blank" rel="noopener"
              aria-label="Cotizar ${c.nombre} por WhatsApp" title="Cotizar por WhatsApp">
             <svg viewBox="0 0 24 24" class="ico ico--fill"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1a12 12 0 0 1-6.2-5.4c-.5-.8-.8-1.7-.8-2.5 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.9 1.6 2 2.7 2.5.3.2.5.1.6 0l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.4.4v.9Z"/></svg>
           </a>
         </div>
       </div>`;
 
-    // Abrir lightbox (salvo si se hizo clic en el botón de WhatsApp)
+    // La tarjeta va rotando los diseños mientras el cursor está encima
+    if (n > 1) rotarPortada(el, grupo);
+
+    // Abrir visor (salvo si se hizo clic en el botón de WhatsApp)
     el.addEventListener('click', ev => {
       if (ev.target.closest('.card__wa')) return;
-      abrirLB(c.id);
+      abrirLB(grupo.ref);
     });
     el.addEventListener('keydown', ev => {
-      if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); abrirLB(c.id); }
+      if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); abrirLB(grupo.ref); }
     });
 
     if (!menosMovimiento) inclinar(el);
     return el;
+  }
+
+  /* Al pasar el cursor por una tarjeta con varios diseños, se van mostrando */
+  function rotarPortada(el, grupo) {
+    if (menosMovimiento) return;
+    const img = $('.card__img', el);
+    const puntos = $$('.card__puntos i', el);
+    let t = 0, k = 0;
+    const mostrar = j => {
+      k = j;
+      img.src = srcDe(grupo.items[j].img);
+      img.alt = `${grupo.items[j].nombre} ${grupo.items[j].version}`;
+      puntos.forEach((p, m) => p.classList.toggle('on', m === j));
+    };
+    el.addEventListener('pointerenter', ev => {
+      if (ev.pointerType !== 'mouse') return;
+      t = setInterval(() => mostrar((k + 1) % grupo.items.length), 1100);
+    });
+    el.addEventListener('pointerleave', () => { clearInterval(t); mostrar(0); });
   }
 
   /* Inclinación 3D suave siguiendo el cursor */
@@ -214,15 +254,36 @@
     return orden ? [...r].sort(orden) : r;
   }
 
-  /* Lista visible actualmente — la usa el lightbox para navegar con flechas */
-  let visibles = [];
+  /* ------------------------------------------------------------ Agrupado
+     Los artículos de la MISMA referencia (mismo nombre) se muestran en una
+     sola tarjeta. Al abrirla se pasa de un diseño a otro con las flechas
+     o deslizando. Basta con que la foto nueva use el mismo "nombre".      */
+  function agrupar(lista) {
+    const mapa = new Map();
+    for (const art of lista) {
+      const ref = art.nombre;
+      if (!mapa.has(ref)) mapa.set(ref, []);
+      mapa.get(ref).push(art);
+    }
+    return [...mapa.values()].map(items => ({
+      ref: items[0].nombre,
+      portada: items[0],     // la primera foto es la que se ve en la tarjeta
+      items,                 // todos los diseños de esa referencia
+    }));
+  }
+
+  /* Grupos visibles actualmente */
+  let grupos = [];
 
   function pintar() {
-    visibles = filtrar(inventario());
+    grupos = agrupar(filtrar(inventario()));
+    const piezas = grupos.reduce((n, g) => n + g.items.length, 0);
 
-    grid1.replaceChildren(...visibles.map(tarjeta));
-    vacio1.hidden = visibles.length > 0;
-    $('#count1').textContent = visibles.length + (visibles.length === 1 ? ' modelo' : ' modelos');
+    grid1.replaceChildren(...grupos.map(tarjeta));
+    vacio1.hidden = grupos.length > 0;
+    $('#count1').textContent =
+      grupos.length + (grupos.length === 1 ? ' referencia' : ' referencias') +
+      (piezas > grupos.length ? ` · ${piezas} diseños` : '');
 
     observarTarjetas();
   }
@@ -252,27 +313,51 @@
 
   /* ------------------------------------------------------------- Lightbox */
   const lb = $('#lb');
-  let lbIdx = -1;
+  let lbGrupo = null;   // referencia abierta
+  let lbIdx = 0;        // diseño dentro de esa referencia
 
-  function abrirLB(id) {
-    lbIdx = visibles.findIndex(c => c.id === id);
-    if (lbIdx < 0) return;
+  function abrirLB(ref) {
+    lbGrupo = grupos.find(g => g.ref === ref);
+    if (!lbGrupo) return;
+    lbIdx = 0;
     lb.hidden = false;
     document.body.classList.add('no-scroll');
     requestAnimationFrame(() => lb.classList.add('show'));
+    montarPuntos();
     llenarLB();
     $('#lbX').focus();
   }
 
+  /* Los puntitos de abajo: uno por diseño, y se puede saltar directo */
+  function montarPuntos() {
+    const n = lbGrupo.items.length;
+    const cont = $('#lbPuntos');
+    cont.hidden = n < 2;
+    $('#lbContador').hidden = n < 2;
+    $$('.lb__nav').forEach(b => { b.hidden = n < 2; });
+    if (n < 2) return cont.replaceChildren();
+    cont.replaceChildren(...lbGrupo.items.map((art, k) => {
+      const b = document.createElement('button');
+      b.className = 'lb__punto';
+      b.type = 'button';
+      b.setAttribute('aria-label', `Ver ${art.version}`);
+      b.onclick = () => { lbIdx = k; llenarLB(); };
+      return b;
+    }));
+  }
+
   function llenarLB() {
-    const c = visibles[lbIdx];
+    const c = lbGrupo?.items[lbIdx];
     if (!c) return;
+    const n = lbGrupo.items.length;
     $('#lbImg').src = srcDe(c.img);
     $('#lbImg').alt = `${c.nombre} ${c.version}`;
     $('#lbNombre').textContent = c.nombre;
     $('#lbVersion').textContent = `${c.version} · ${ETIQUETA()[c.categoria]}`;
     $('#lbPrecio').innerHTML = precioHTML(c.precio);
     $('#lbWa').href = enlaceWA(c);
+    $('#lbContador').textContent = `${lbIdx + 1} / ${n}`;
+    $$('#lbPuntos .lb__punto').forEach((p, k) => p.classList.toggle('on', k === lbIdx));
   }
 
   function cerrarLB() {
@@ -281,9 +366,12 @@
     setTimeout(() => { lb.hidden = true; }, 380);
   }
 
+  /* Las flechas recorren los diseños de la referencia abierta */
   const moverLB = paso => {
-    if (!visibles.length) return;
-    lbIdx = (lbIdx + paso + visibles.length) % visibles.length;
+    if (!lbGrupo) return;
+    const n = lbGrupo.items.length;
+    if (n < 2) return;
+    lbIdx = (lbIdx + paso + n) % n;
     llenarLB();
   };
 
