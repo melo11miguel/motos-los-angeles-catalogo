@@ -165,8 +165,8 @@ const GUANTES = [
   { id: "maranata-larga", nombre: "MARANATA Caña Larga", version: "Rosa / Negro / Gris", precio: 110000, categoria: "cuero", marca: "MARANATA", img: "IMG_8585.webp", destacado: true },
   { id: "fox-cuero-rosa", nombre: "FOX Cuero Caña Larga", version: "Negro / Rosa", precio: 85000, categoria: "cuero", marca: "FOX", img: "IMG_8573.webp" },
   { id: "fox-cuero-3col", nombre: "FOX Cuero Caña Larga", version: "Rosa / Amarillo / Morado", precio: 85000, categoria: "cuero", marca: "FOX", img: "IMG_8574.webp" },
-  { id: "xiox-cuero-3col", nombre: "XIOX Cuero Caña Larga", version: "Rosa / Negro / Morado", precio: 85000, categoria: "cuero", marca: "XIOX", img: "IMG_8580.webp" },
-  { id: "xiox-cuero-neon", nombre: "XIOX Cuero Caña Larga", version: "Naranja / Verde Neón", precio: 85000, categoria: "cuero", marca: "XIOX", img: "IMG_8581.webp" },
+  { id: "xiox-cuero-3col", nombre: "XIOX Cuero Caña Larga", version: "Rosa / Negro / Morado", precio: 40000, categoria: "cuero", marca: "XIOX", img: "IMG_8580.webp" },
+  { id: "xiox-cuero-neon", nombre: "XIOX Cuero Caña Larga", version: "Naranja / Verde Neón", precio: 40000, categoria: "cuero", marca: "XIOX", img: "IMG_8581.webp" },
   { id: "fox-proteccion-3", nombre: "FOX Protección", version: "Morado / Blanco / Rosa", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8596.webp" },
   { id: "icon-cuero",     nombre: "ICON Cuero", version: "Negro / Rosa", precio: 80000, categoria: "cuero", marca: "ICON", img: "IMG_8559.webp" },
 
