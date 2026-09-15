@@ -127,7 +127,7 @@ const GUANTES = [
   { id: "fox-turquesa",   nombre: "FOX Dirtpaw", version: "Turquesa", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8308.webp" },
 
   { id: "fox-gris",       nombre: "FOX Dirtpaw", version: "Gris / Negro", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8304.webp" },
-  { id: "fox-prot-rosa",  nombre: "FOX Protección", version: "Rosa / Negro", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8305.webp" },
+  { id: "fox-dirtpaw-rosa", nombre: "FOX Dirtpaw", version: "Rosa / Negro", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8305.webp" },
 
   { id: "city-colores",   nombre: "City (semi impermeable)", version: "Surtido de colores", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8551.webp" },
   { id: "city-gris",      nombre: "City (semi impermeable)", version: "Gris / Morado / Rosa", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8552.webp" },
@@ -156,7 +156,7 @@ const GUANTES = [
 
   /* =============================== CUERO ========================= */
   { id: "alpine-gppro",   nombre: "ALPINESTAR GP PRO", version: "Cuero Negro Caña Larga", precio: 200000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8560.webp", destacado: true },
-  { id: "alpine-sp8",     nombre: "ALPINESTAR SP8", version: "Negro / Blanco / Rojo", precio: 210000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8563.webp" },
+  { id: "alpine-media-rojo", nombre: "ALPINESTAR Caña Media", version: "Negro / Blanco / Rojo", precio: 130000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8563.webp" },
   { id: "alpine-media",   nombre: "ALPINESTAR Caña Media", version: "Cuero Negro", precio: 130000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8562.webp" },
 
   { id: "dfr-cuero",      nombre: "DFR Cuero", version: "Negro / Azul", precio: 90000, categoria: "cuero", marca: "DFR", img: "IMG_8576.webp" },
