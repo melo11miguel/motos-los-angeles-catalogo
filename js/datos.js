@@ -62,9 +62,9 @@ const CASCOS = [
   { id: "ich503-burst",   nombre: "ICH 503", version: "Burst Mode", precio: 200000, categoria: "integral", marca: "ICH", img: "IMG_8427.webp", destacado: true },
   { id: "nino-spider",    nombre: "Niño Certificado", version: "Spider Rojo", precio: 110000, categoria: "integral", marca: "ICH", img: "IMG_8382.webp", nino: true },
   { id: "nino-kitty",     nombre: "Niño Certificado", version: "Hello Kitty", precio: 110000, categoria: "integral", marca: "ICH", img: "IMG_8384.webp", nino: true },
-  { id: "xone-bornwin",   nombre: "XONE Integral", version: "Born To Win Azul", precio: 200000, categoria: "integral", marca: "XONE", img: "IMG_8385.webp" },
+  { id: "xone-bornwin",   nombre: "XONE Integral", version: "Born To Win Azul", precio: 220000, categoria: "integral", marca: "XONE", img: "IMG_8385.webp" },
 
-  { id: "xone-integral",  nombre: "XONE Integral", version: "Verde Militar Mate", precio: 200000, categoria: "integral", marca: "XONE", img: "IMG_8390.webp" },
+  { id: "xone-integral",  nombre: "XONE Integral", version: "Verde Militar Mate", precio: 220000, categoria: "integral", marca: "XONE", img: "IMG_8390.webp" },
 
   { id: "edge-mate",      nombre: "EDGE Negro Mate", version: "Black Series", precio: 350000, categoria: "integral", marca: "EDGE", img: "IMG_8391.webp", destacado: true },
   { id: "edge-color",     nombre: "EDGE Color", version: "Azul / Rojo", precio: 380000, categoria: "integral", marca: "EDGE", img: "IMG_8392.webp" },
