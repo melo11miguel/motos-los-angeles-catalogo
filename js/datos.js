@@ -156,8 +156,8 @@ const GUANTES = [
 
   /* =============================== CUERO ========================= */
   { id: "alpine-gppro",   nombre: "ALPINESTAR GP PRO", version: "Cuero Negro Caña Larga", precio: 200000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8560.webp", destacado: true },
-  { id: "alpine-media-rojo", nombre: "ALPINESTAR Caña Media", version: "Negro / Blanco / Rojo", precio: 130000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8563.webp" },
-  { id: "alpine-media",   nombre: "ALPINESTAR Caña Media", version: "Cuero Negro", precio: 130000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8562.webp" },
+  { id: "alpine-media-rojo", nombre: "ALPINESTAR Caña Media", version: "Negro / Blanco / Rojo", precio: 140000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8563.webp" },
+  { id: "alpine-media",   nombre: "ALPINESTAR Caña Media", version: "Cuero Negro", precio: 140000, categoria: "cuero", marca: "ALPINESTAR", img: "IMG_8562.webp" },
 
   { id: "dfr-cuero",      nombre: "DFR Cuero", version: "Negro / Azul", precio: 90000, categoria: "cuero", marca: "DFR", img: "IMG_8576.webp" },
 
