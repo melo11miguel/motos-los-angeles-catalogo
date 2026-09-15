@@ -179,8 +179,8 @@ const GUANTES = [
   { id: "imp-750",        nombre: "Impermeable 750", version: "Rojo / Azul", precio: 90000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8604.webp" },
   { id: "mrace-gm22",     nombre: "MRACE Traslúcido GM22", version: "Holográfico", precio: 90000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8605.webp" },
   { id: "mrace-gm22b",    nombre: "MRACE Traslúcido GM22", version: "Holográfico (par)", precio: 90000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8606.webp" },
-  { id: "puizzance-14",   nombre: "PUIZZANCE WPZ14", version: "Negro", precio: 90000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_8568.webp" },
-  { id: "puizzance-12",   nombre: "PUIZZANCE WPZ12", version: "Negro / Gris", precio: 90000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_8588.webp" },
+  { id: "puizzance-14",   nombre: "PUIZZANCE WPZ14", version: "Negro", precio: 35000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_8568.webp" },
+  { id: "puizzance-12",   nombre: "PUIZZANCE WPZ12", version: "Negro / Gris", precio: 60000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_8588.webp" },
 
   { id: "over-st11-cam",   nombre: "OVER ST11", version: "Camaleón Rosa / Azul", precio: 90000, categoria: "impermeable", marca: "OVER", img: "IMG_9204.webp" },
   { id: "suomy-su29-gris", nombre: "SUOMY SU29", version: "Negro / Gris", precio: 90000, categoria: "impermeable", marca: "SUOMY", img: "IMG_9205.webp" },
