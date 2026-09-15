@@ -174,7 +174,7 @@ const GUANTES = [
   { id: "cremallera-semi", nombre: "Cremallera Semi", version: "Negro Touch", precio: 25000, categoria: "tela", marca: "HKXY", img: "IMG_8598.webp" },
   { id: "over-st11",      nombre: "OVER ST11", version: "Negro", precio: 90000, categoria: "impermeable", marca: "OVER", img: "IMG_8607.webp" },
   { id: "over-holo",      nombre: "OVER Holográfico", version: "Reflectivo", precio: 90000, categoria: "impermeable", marca: "OVER", img: "IMG_8608.webp", destacado: true },
-  { id: "mrace-gm001",    nombre: "MRACE GM001", version: "Rojo / Morado / Verde", precio: 90000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8602.webp" },
+  { id: "mrace-gm001",    nombre: "MRACE 010", version: "Rojo / Morado / Verde", precio: 130000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8602.webp" },
   { id: "mrace-010",      nombre: "MRACE 010", version: "Negro / Verde / Rosa", precio: 130000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8603.webp" },
   { id: "imp-750",        nombre: "Impermeable 750", version: "Rojo / Azul", precio: 90000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8604.webp" },
   { id: "mrace-gm22",     nombre: "MRACE Traslúcido GM22", version: "Holográfico", precio: 30000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8605.webp" },
