@@ -192,3 +192,13 @@ const GUANTES = [
   { id: "madbike-wp-morado",   nombre: "MADBIKE Waterproof", version: "Morado / Azul", precio: 90000, categoria: "impermeable", marca: "MADBIKE", img: "IMG_9210.webp" },
   { id: "madbike-wp-rosa",     nombre: "MADBIKE Waterproof", version: "Rosa / Rojo", precio: 90000, categoria: "impermeable", marca: "MADBIKE", img: "IMG_9211.webp" },
 ];
+
+/* ======================== INTERCOMUNICADORES ============================
+   Precios por confirmar (precio: null se muestra como "Por definir").
+---------------------------------------------------------------------------- */
+const INTERCOMUNICADORES = [
+  { id: "intercom-v12pro", nombre: "V12 Pro", version: "Bluetooth 5.4", precio: null, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9221.webp" },
+  { id: "intercom-v10-2x", nombre: "V10 2X", version: "Resistente al agua", precio: null, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9222.webp" },
+  { id: "intercom-d2-6x",  nombre: "D2-6X", version: "Dual-Core IPX6", precio: null, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9223.webp" },
+  { id: "intercom-q58max", nombre: "Q58-Max", version: "Con radio FM", precio: null, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9224.webp" },
+];

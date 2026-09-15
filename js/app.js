@@ -21,6 +21,9 @@
     impermeable: '<svg viewBox="0 0 24 24"><path d="M12 3s5.5 6 5.5 9.5a5.5 5.5 0 0 1-11 0C6.5 9 12 3 12 3Z"/></svg>',
     medio:       '<svg viewBox="0 0 24 24"><path d="M6 11V8.5a1.5 1.5 0 0 1 3 0V11m0 0V8a1.5 1.5 0 0 1 3 0v3m0 0V8.5a1.5 1.5 0 0 1 3 0V11m0 1V9.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a7 7 0 0 1-7-7v-2a1.5 1.5 0 0 1 3 0"/></svg>',
   };
+  const ICONO_INTERCOM = {
+    bluetooth: '<svg viewBox="0 0 24 24"><path d="M8 7 16 15 12 19V5l4 4-8 8"/></svg>',
+  };
 
   /* Cada producto define su carpeta de fotos, sus etiquetas y sus iconos */
   const PRODUCTOS = {
@@ -39,6 +42,14 @@
       icono: ICONO_GUANTE,
       singular: 'guante',
       titulo: 'Catálogo <em>de</em> Guantes',
+    },
+    intercomunicadores: {
+      lista: INTERCOMUNICADORES.filter(c => c.activo !== false),
+      carpeta: 'intercomunicadores/',
+      etiqueta: { bluetooth: 'BLUETOOTH' },
+      icono: ICONO_INTERCOM,
+      singular: 'intercomunicador',
+      titulo: 'Catálogo <em>de</em> Intercomunicadores',
     },
   };
 
@@ -509,7 +520,7 @@
 
   /* El hero cuenta el total de todo el catálogo, no solo del producto activo */
   const stats = $$('.hero__stats .cnt');
-  const TODO = [...PRODUCTOS.cascos.lista, ...PRODUCTOS.guantes.lista];
+  const TODO = [...PRODUCTOS.cascos.lista, ...PRODUCTOS.guantes.lista, ...PRODUCTOS.intercomunicadores.lista];
   stats[0].dataset.to = TODO.length;
   stats[1].dataset.to = new Set(TODO.map(c => c.marca)).size;
 
