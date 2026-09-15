@@ -127,7 +127,7 @@ const GUANTES = [
   { id: "fox-turquesa",   nombre: "FOX Dirtpaw", version: "Turquesa", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8308.webp" },
 
   { id: "fox-gris",       nombre: "FOX Dirtpaw", version: "Gris / Negro", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8304.webp" },
-  { id: "fox-dirtpaw-rosa", nombre: "FOX Dirtpaw", version: "Rosa / Negro", precio: 35000, categoria: "tela", marca: "FOX", img: "IMG_8305.webp" },
+  { id: "fox-dirtpaw-rosa", nombre: "FOX Dirtpaw", version: "Rosa / Negro", precio: 45000, categoria: "tela", marca: "FOX", img: "IMG_8305.webp" },
 
   { id: "city-colores",   nombre: "City (semi impermeable)", version: "Surtido de colores", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8551.webp" },
   { id: "city-gris",      nombre: "City (semi impermeable)", version: "Gris / Morado / Rosa", precio: 45000, categoria: "tela", marca: "CITY", img: "IMG_8552.webp" },
