@@ -27,6 +27,10 @@ const NEGOCIO = {
 
   direccion: "Calle 17 #15-18, al frente a Mundimotos",
   horario: "Lun a Sáb · 9:00 a.m. – 7:00 p.m.",
+
+  // Usuarios de redes sociales, sin @ y sin la URL completa.
+  instagram: "motoslosangeles",
+  tiktok: "motoslosangeles",
 };
 
 /* --- Inventario ----------------------------------------------------------

@@ -504,6 +504,8 @@
   $('#waGeneral').href = enlaceWA(null);
   $('#fab').href = enlaceWA(null);
   $('#waCatalogo').href = enlaceWA(null);
+  $('#linkInstagram').href = 'https://www.instagram.com/' + NEGOCIO.instagram + '/';
+  $('#linkTiktok').href = 'https://www.tiktok.com/@' + NEGOCIO.tiktok;
 
   /* El hero cuenta el total de todo el catálogo, no solo del producto activo */
   const stats = $$('.hero__stats .cnt');

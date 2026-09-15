@@ -5,21 +5,21 @@
 
 /* ---------- Tokens ---------- */
 :root{
-  --bg:        #0b0c0e;
-  --bg-2:      #101216;
-  --surface:   #15181d;
-  --surface-2: #1c2027;
-  --line:      #262b33;
-  --line-soft: #1e222a;
+  --bg:        #07090d;
+  --bg-2:      #0d1016;
+  --surface:   #11161d;
+  --surface-2: #171d27;
+  --line:      #232b36;
+  --line-soft: #1a212b;
 
-  --txt:       #eef1f5;
-  --txt-2:     #a3abb8;
-  --txt-3:     #6b7482;
+  --txt:       #edf3ff;
+  --txt-2:     #b5c0d0;
+  --txt-3:     #7d8aa0;
 
-  --acc:       #2f6fed;   /* azul motero */
-  --acc-2:     #6fa2ff;
-  --acc-deep:  #143e9e;
-  --ok:        #35d07f;
+  --acc:       #3a7bff;   /* azul motero */
+  --acc-2:     #7aa8ff;
+  --acc-deep:  #1b4ec5;
+  --ok:        #3ddc97;
 
   --r-s: 6px;
   --r-m: 14px;
@@ -275,6 +275,8 @@ button,input,select{ font:inherit; color:inherit; }
 .btn--ghost{ border-color:var(--line); color:var(--txt-2); background:rgba(21,24,29,.5); }
 .btn--ghost:hover{ border-color:var(--acc); color:var(--txt); transform:translateY(-2px); }
 .btn:active{ transform:translateY(0) scale(.98); }
+.btn--icon{ padding:13px; gap:0; }
+.btn--icon .ico{ width:1.3em; height:1.3em; }
 
 /* =============================== TOOLBAR ========================== */
 .toolbar{
@@ -564,7 +566,7 @@ button,input,select{ font:inherit; color:inherit; }
 .contacto__title{ margin:0 0 18px; font-size:clamp(2rem,6vw,3.8rem); font-weight:900;
   letter-spacing:-.035em; line-height:1.02; }
 .contacto__desc{ margin:0 auto 34px; max-width:48ch; color:var(--txt-2); }
-.contacto__cta{ display:flex; justify-content:center; }
+.contacto__cta{ display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap; }
 
 .contacto__datos{
   display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
