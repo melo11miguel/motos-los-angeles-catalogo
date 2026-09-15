@@ -68,6 +68,8 @@ const CASCOS = [
 
   { id: "edge-mate",      nombre: "EDGE Negro Mate", version: "Black Series", precio: 350000, categoria: "integral", marca: "EDGE", img: "IMG_8391.webp", destacado: true },
   { id: "edge-color",     nombre: "EDGE Color", version: "Azul / Rojo", precio: 380000, categoria: "integral", marca: "EDGE", img: "IMG_8392.webp" },
+  { id: "edge-bobesponja", nombre: "EDGE Bob Esponja", version: "Amarillo", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9202.webp", destacado: true },
+  { id: "edge-tomyjerry",  nombre: "EDGE Tom y Jerry", version: "Negro / Gris", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9199.webp", destacado: true },
 
   { id: "m57-brillante",  nombre: "XSPORTS M57", version: "Negro Brillante", precio: 350000, categoria: "integral", marca: "XSPORTS", img: "IMG_8393.webp" },
   { id: "m57-mate",       nombre: "XSPORTS M57", version: "Negro Mate", precio: 350000, categoria: "integral", marca: "XSPORTS", img: "IMG_8401.webp" },
