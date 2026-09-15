@@ -197,8 +197,8 @@ const GUANTES = [
    Precios de motos.xlsx, hoja INTERCOMUNICADOR, columna P_salida.
 ---------------------------------------------------------------------------- */
 const INTERCOMUNICADORES = [
-  { id: "intercom-v12pro", nombre: "V12 Pro", version: "Bluetooth 5.4", precio: 95000, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9221.webp" },
-  { id: "intercom-v10-2x", nombre: "V10 2X", version: "Resistente al agua", precio: 75000, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9222.webp" },
+  { id: "intercom-v12pro", nombre: "Y12 Pro", version: "Bluetooth 5.4", precio: 95000, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9221.webp" },
+  { id: "intercom-v10-2x", nombre: "Y10", version: "Resistente al agua", precio: 75000, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9222.webp" },
   { id: "intercom-d2-6x",  nombre: "D2-6X", version: "Dual-Core IPX6", precio: 180000, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9223.webp" },
   { id: "intercom-q58max", nombre: "Q58-Max", version: "Con radio FM", precio: 90000, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9224.webp" },
 ];
