@@ -70,6 +70,12 @@ const CASCOS = [
   { id: "edge-color",     nombre: "EDGE Color", version: "Azul / Rojo", precio: 380000, categoria: "integral", marca: "EDGE", img: "IMG_8392.webp" },
   { id: "edge-bobesponja", nombre: "EDGE Bob Esponja", version: "Amarillo", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9202.webp", destacado: true },
   { id: "edge-tomyjerry",  nombre: "EDGE Tom y Jerry", version: "Negro / Gris", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9199.webp", destacado: true },
+  { id: "edge-batman",    nombre: "EDGE Batman", version: "The Dark Knight", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9197.webp" },
+  { id: "edge-flash",     nombre: "EDGE Flash", version: "DC Comics", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9200.webp" },
+  { id: "edge-tortugas",  nombre: "EDGE Tortugas Ninja", version: "TMNT", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9198.webp" },
+  { id: "edge-speed",     nombre: "EDGE Speed", version: "Blanco / Rojo", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9194.webp" },
+  { id: "edge-morado",    nombre: "EDGE Morado", version: "Morado Brillante", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9196.webp" },
+  { id: "edge-camaleon",  nombre: "EDGE Camaleón", version: "Morado / Azul", precio: 450000, categoria: "integral", marca: "EDGE", img: "IMG_9201.webp" },
 
   { id: "m57-brillante",  nombre: "XSPORTS M57", version: "Negro Brillante", precio: 350000, categoria: "integral", marca: "XSPORTS", img: "IMG_8393.webp" },
   { id: "m57-mate",       nombre: "XSPORTS M57", version: "Negro Mate", precio: 350000, categoria: "integral", marca: "XSPORTS", img: "IMG_8401.webp" },
@@ -129,6 +135,7 @@ const GUANTES = [
   { id: "suomy19",        nombre: "SUOMY 19", version: "Negro Racing", precio: 60000, categoria: "tela", marca: "SUOMY", img: "IMG_8587.webp" },
 
   { id: "motowolf-rosa",  nombre: "MOTOWOLF", version: "Negro / Rosa", precio: 55000, categoria: "tela", marca: "MOTOWOLF", img: "IMG_8557.webp" },
+  { id: "motowolf-metal", nombre: "MOTOWOLF", version: "Rojo / Azul (protección metálica)", precio: 55000, categoria: "tela", marca: "MOTOWOLF", img: "IMG_9208.webp" },
 
   { id: "rsspurtt-07", nombre: "RSSPURTT 07", version: "Verde Neón / Rosa", precio: 55000, categoria: "tela", marca: "RSSPURTT", img: "IMG_8567.webp" },
   { id: "alpine-3col",    nombre: "ALPINESTAR", version: "Rojo / Negro / Azul", precio: 50000, categoria: "tela", marca: "ALPINESTAR", img: "IMG_8589.webp" },
@@ -174,4 +181,14 @@ const GUANTES = [
   { id: "mrace-gm22b",    nombre: "MRACE Traslúcido GM22", version: "Holográfico (par)", precio: 30000, categoria: "impermeable", marca: "M-RACE", img: "IMG_8606.webp" },
   { id: "puizzance-14",   nombre: "PUIZZANCE WPZ14", version: "Negro", precio: 90000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_8568.webp" },
   { id: "puizzance-12",   nombre: "PUIZZANCE WPZ12", version: "Negro / Gris", precio: 90000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_8588.webp" },
+
+  { id: "over-st11-cam",   nombre: "OVER ST11", version: "Camaleón Rosa / Azul", precio: 90000, categoria: "impermeable", marca: "OVER", img: "IMG_9204.webp" },
+  { id: "suomy-su29-gris", nombre: "SUOMY SU29", version: "Negro / Gris", precio: 90000, categoria: "impermeable", marca: "SUOMY", img: "IMG_9205.webp" },
+  { id: "suomy-su29-rosa", nombre: "SUOMY SU29", version: "Negro / Rosa", precio: 90000, categoria: "impermeable", marca: "SUOMY", img: "IMG_9213.webp" },
+  { id: "puizzance-pz07-rosa", nombre: "PUIZZANCE PZ07", version: "Camuflaje Rosa", precio: 90000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_9206.webp" },
+  { id: "puizzance-pz07-neon", nombre: "PUIZZANCE PZ07", version: "Camuflaje Neón / Rojo", precio: 90000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_9207.webp" },
+  { id: "puizzance-reflectivo", nombre: "PUIZZANCE Reflectivo", version: "Blanco / Naranja", precio: 90000, categoria: "impermeable", marca: "PUIZZANCE", img: "IMG_9215.webp" },
+  { id: "madbike-wp-petroleo", nombre: "MADBIKE Waterproof", version: "Negro / Petróleo", precio: 90000, categoria: "impermeable", marca: "MADBIKE", img: "IMG_9209.webp" },
+  { id: "madbike-wp-morado",   nombre: "MADBIKE Waterproof", version: "Morado / Azul", precio: 90000, categoria: "impermeable", marca: "MADBIKE", img: "IMG_9210.webp" },
+  { id: "madbike-wp-rosa",     nombre: "MADBIKE Waterproof", version: "Rosa / Rojo", precio: 90000, categoria: "impermeable", marca: "MADBIKE", img: "IMG_9211.webp" },
 ];
