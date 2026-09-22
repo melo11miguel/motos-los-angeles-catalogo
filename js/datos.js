@@ -224,3 +224,18 @@ const IMPERMEABLES = [
   { id: "imp-priuss",             nombre: "Impermeable PRIUS",              version: "Nacional Tipo Sudadera",  precio: 130000, categoria: "sudadera", marca: "PRIUS",      img: "priuss.png" },
   { id: "imp-vemar",              nombre: "Impermeable VEMAR",              version: "Tipo Sudadera",           precio: 180000, categoria: "sudadera", marca: "VEMAR",      img: "vemar.webp" },
 ];
+
+/* ============================================================================
+   CHAQUETAS · fotos en la carpeta /chaquetas
+   Precios de motos.xlsx, hoja Chaquetas (ENTRADA/SALIDA en miles, x1000 acá).
+   categoria: "cortaviento" | "rompeviento" | "termica"
+   Fotos de referencia tomadas de proveedores web — pendientes de reemplazar
+   por fotos propias del producto real.
+   ========================================================================= */
+const CHAQUETAS = [
+  { id: "chq-cortaviento-h", nombre: "Chaqueta Cortaviento Reflectiva", version: "Hombre", precio: 60000, categoria: "cortaviento", marca: "GP", img: "cortaviento_hombre.jpg", destacado: true },
+  { id: "chq-cortaviento-m", nombre: "Chaqueta Cortaviento Reflectiva", version: "Mujer",  precio: 60000, categoria: "cortaviento", marca: "GP", img: "cortaviento_mujer.jpg" },
+  { id: "chq-rompeviento",   nombre: "Chaqueta Rompeviento Sencilla",   version: "Portable", precio: 50000, categoria: "rompeviento", marca: "GENÉRICO", img: "rompeviento_sencilla.jpg" },
+  { id: "chq-termica-h",     nombre: "Chaqueta Térmica Reflectiva",     version: "Hombre", precio: 90000, categoria: "termica", marca: "GP", img: "termica_hombre.jpg" },
+  { id: "chq-termica-m",     nombre: "Chaqueta Térmica Reflectiva",     version: "Mujer",  precio: 90000, categoria: "termica", marca: "GP", img: "termica_mujer.jpg" },
+];

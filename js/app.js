@@ -28,6 +28,11 @@
     sudadera: '<svg viewBox="0 0 24 24"><path d="M12 3s5.5 6 5.5 9.5a5.5 5.5 0 0 1-11 0C6.5 9 12 3 12 3Z"/></svg>',
     pvc:      '<svg viewBox="0 0 24 24"><path d="M4 15a8 8 0 0 1 16 0v2H4v-2Z"/><path d="M4 17h9"/></svg>',
   };
+  const ICONO_CHAQUETA = {
+    cortaviento: '<svg viewBox="0 0 24 24"><path d="M8 4 5 7v13h14V7l-3-3-3 2-3-2Z"/><path d="M9 4v3l3 2 3-2V4"/></svg>',
+    rompeviento: '<svg viewBox="0 0 24 24"><path d="M8 4 5 7v13h14V7l-3-3-3 2-3-2Z"/></svg>',
+    termica:     '<svg viewBox="0 0 24 24"><path d="M8 4 5 7v13h14V7l-3-3-3 2-3-2Z"/><path d="M9 12h6M9 16h6"/></svg>',
+  };
 
   /* Cada producto define su carpeta de fotos, sus etiquetas y sus iconos */
   const PRODUCTOS = {
@@ -62,6 +67,14 @@
       icono: ICONO_IMPERMEABLE,
       singular: 'impermeable',
       titulo: 'Catálogo <em>de</em> Impermeables',
+    },
+    chaquetas: {
+      lista: CHAQUETAS.filter(c => c.activo !== false),
+      carpeta: 'chaquetas/',
+      etiqueta: { cortaviento: 'CORTAVIENTO', rompeviento: 'ROMPEVIENTO', termica: 'TÉRMICA' },
+      icono: ICONO_CHAQUETA,
+      singular: 'chaqueta',
+      titulo: 'Catálogo <em>de</em> Chaquetas',
     },
   };
 
@@ -532,7 +545,7 @@
 
   /* El hero cuenta el total de todo el catálogo, no solo del producto activo */
   const stats = $$('.hero__stats .cnt');
-  const TODO = [...PRODUCTOS.cascos.lista, ...PRODUCTOS.guantes.lista, ...PRODUCTOS.intercomunicadores.lista, ...PRODUCTOS.impermeables.lista];
+  const TODO = [...PRODUCTOS.cascos.lista, ...PRODUCTOS.guantes.lista, ...PRODUCTOS.intercomunicadores.lista, ...PRODUCTOS.impermeables.lista, ...PRODUCTOS.chaquetas.lista];
   stats[0].dataset.to = TODO.length;
   stats[1].dataset.to = new Set(TODO.map(c => c.marca)).size;
 
