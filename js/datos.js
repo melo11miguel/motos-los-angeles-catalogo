@@ -202,3 +202,25 @@ const INTERCOMUNICADORES = [
   { id: "intercom-d2-6x",  nombre: "D2-6X", version: "Dual-Core IPX6", precio: 180000, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9223.webp" },
   { id: "intercom-q58max", nombre: "Q58-Max", version: "Con radio FM", precio: 90000, categoria: "bluetooth", marca: "GENÉRICO", img: "IMG_9224.webp" },
 ];
+
+/* ============================================================================
+   IMPERMEABLES · fotos en la carpeta /impermeables
+   Precios de motos.xlsx, hoja Impermeables (ENTRADA/SALIDA en miles, x1000 acá).
+   categoria: "sudadera" (tipo hoodie) | "pvc" (traje GP calibrado / resortado)
+   Fotos de referencia tomadas de proveedores web — pendientes de reemplazar
+   por fotos propias del producto real.
+   ========================================================================= */
+const IMPERMEABLES = [
+  { id: "imp-siliconado",         nombre: "Impermeable Siliconado",         version: "Resortado GP",            precio: 60000,  categoria: "pvc",      marca: "GENÉRICO",   img: "siliconado.jpg" },
+  { id: "imp-pvc",                nombre: "Impermeable PVC",                version: "Traje GP Calibre 16",      precio: 70000,  categoria: "pvc",      marca: "GENÉRICO",   img: "pvc.jpg" },
+  { id: "imp-encauchetado",       nombre: "Impermeable Encauchetado",       version: "Construcción reforzada",  precio: 100000, categoria: "pvc",      marca: "GENÉRICO",   pendiente: true },
+  { id: "imp-db1",                nombre: "Impermeable DB1",                version: "Tipo Sudadera",           precio: 195000, categoria: "sudadera", marca: "DB1",        pendiente: true },
+  { id: "imp-ax10",               nombre: "Impermeable AX10",               version: "Tipo Sudadera",           precio: 135000, categoria: "sudadera", marca: "AX10",       img: "ax10.jpg" },
+  { id: "imp-colmena-alpinestar", nombre: "Impermeable Colmena AlpineStar", version: "Tipo Sudadera",           precio: 150000, categoria: "sudadera", marca: "ALPINESTAR", img: "colmena_alpinestar.jpg" },
+  { id: "imp-puizzance",          nombre: "Impermeable Puizzance",          version: "PZR-101 Tipo Sudadera",   precio: 180000, categoria: "sudadera", marca: "PUIZZANCE",  img: "puizzance.jpg", destacado: true },
+  { id: "imp-madbike",            nombre: "Impermeable Camuflado MADBIKE",  version: "Tipo Sudadera",           precio: 160000, categoria: "sudadera", marca: "MADBIKE",    img: "camuflado_madbike.png" },
+  { id: "imp-camuflado-importado", nombre: "Impermeable Camuflado Importado", version: "Tipo Sudadera",         precio: 130000, categoria: "sudadera", marca: "IMPORTADO",  img: "camuflado_importado.jpg" },
+  { id: "imp-over",               nombre: "Impermeable OVER",               version: "New Tipo Sudadera",       precio: 150000, categoria: "sudadera", marca: "OVER",       img: "over.png" },
+  { id: "imp-priuss",             nombre: "Impermeable PRIUS",              version: "Nacional Tipo Sudadera",  precio: 130000, categoria: "sudadera", marca: "PRIUS",      img: "priuss.png" },
+  { id: "imp-vemar",              nombre: "Impermeable VEMAR",              version: "Tipo Sudadera",           precio: 180000, categoria: "sudadera", marca: "VEMAR",      img: "vemar.webp" },
+];

@@ -24,6 +24,10 @@
   const ICONO_INTERCOM = {
     bluetooth: '<svg viewBox="0 0 24 24"><path d="M8 7 16 15 12 19V5l4 4-8 8"/></svg>',
   };
+  const ICONO_IMPERMEABLE = {
+    sudadera: '<svg viewBox="0 0 24 24"><path d="M12 3s5.5 6 5.5 9.5a5.5 5.5 0 0 1-11 0C6.5 9 12 3 12 3Z"/></svg>',
+    pvc:      '<svg viewBox="0 0 24 24"><path d="M4 15a8 8 0 0 1 16 0v2H4v-2Z"/><path d="M4 17h9"/></svg>',
+  };
 
   /* Cada producto define su carpeta de fotos, sus etiquetas y sus iconos */
   const PRODUCTOS = {
@@ -50,6 +54,14 @@
       icono: ICONO_INTERCOM,
       singular: 'intercomunicador',
       titulo: 'Catálogo <em>de</em> Intercomunicadores',
+    },
+    impermeables: {
+      lista: IMPERMEABLES.filter(c => c.activo !== false),
+      carpeta: 'impermeables/',
+      etiqueta: { sudadera: 'TIPO SUDADERA', pvc: 'PVC / RESORTADO' },
+      icono: ICONO_IMPERMEABLE,
+      singular: 'impermeable',
+      titulo: 'Catálogo <em>de</em> Impermeables',
     },
   };
 
@@ -520,7 +532,7 @@
 
   /* El hero cuenta el total de todo el catálogo, no solo del producto activo */
   const stats = $$('.hero__stats .cnt');
-  const TODO = [...PRODUCTOS.cascos.lista, ...PRODUCTOS.guantes.lista, ...PRODUCTOS.intercomunicadores.lista];
+  const TODO = [...PRODUCTOS.cascos.lista, ...PRODUCTOS.guantes.lista, ...PRODUCTOS.intercomunicadores.lista, ...PRODUCTOS.impermeables.lista];
   stats[0].dataset.to = TODO.length;
   stats[1].dataset.to = new Set(TODO.map(c => c.marca)).size;
 
