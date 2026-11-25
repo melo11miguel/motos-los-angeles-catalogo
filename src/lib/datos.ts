@@ -62,7 +62,7 @@ export const catalogoPublico = unstable_cache(
     const [negocio, productos] = await Promise.all([obtenerNegocio(), listarProductos()]);
     return { negocio, productos: productos.filter((p) => p.activo) };
   },
-  ["catalogo-publico"],
+  ["catalogo-publico-v2"],
   { tags: [TAG_CATALOGO], revalidate: 3600 },
 );
 

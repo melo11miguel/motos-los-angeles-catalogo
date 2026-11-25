@@ -6,7 +6,7 @@ import type { Negocio } from "@/lib/datos";
 
 const CAMPOS: { k: keyof Negocio; t: string; ayuda?: string }[] = [
   { k: "nombre", t: "Nombre del negocio", ayuda: "Sale en el mensaje de WhatsApp." },
-  { k: "whatsapp", t: "WhatsApp", ayuda: "Con indicativo y sin + ni espacios. Ej: 573213701476" },
+  { k: "whatsapp", t: "WhatsApp", ayuda: "Con indicativo y sin + ni espacios. Ej: 573138165217" },
   { k: "direccion", t: "Dirección" },
   { k: "horario", t: "Horario" },
   { k: "instagram", t: "Usuario de Instagram", ayuda: "Sin @" },

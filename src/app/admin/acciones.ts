@@ -198,7 +198,7 @@ export async function borrarProducto(fd: FormData) {
 const esquemaNegocio = z.object({
   nombre: z.string().min(1, "Escribe el nombre del negocio.").max(80),
   eslogan: z.string().max(160),
-  whatsapp: z.string().regex(/^\d{10,15}$/, "El WhatsApp va con indicativo y solo números, ej: 573213701476."),
+  whatsapp: z.string().regex(/^\d{10,15}$/, "El WhatsApp va con indicativo y solo números, ej: 573138165217."),
   direccion: z.string().max(160),
   horario: z.string().max(160),
   instagram: z.string().max(60),
