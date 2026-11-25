@@ -91,7 +91,9 @@
      imagen ya embebida en base64. En la versión local con carpeta /img,
      window.FOTOS no existe y simplemente se usa la ruta relativa. */
   const FOTOS = (typeof window !== 'undefined' && window.FOTOS) || {};
-  const srcDe = img => img ? (FOTOS[img] || (producto.carpeta + img)) : SIN_FOTO;
+  const srcDe = img => img
+    ? (FOTOS[img] || (/^(https?:)?\//.test(img) ? img : producto.carpeta + img))
+    : SIN_FOTO;
 
   /* Placeholder para referencias del Excel que aún no tienen foto */
   const SIN_FOTO = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
@@ -178,7 +180,7 @@
       : grupo.items.map(x => x.version).join(' · ');
 
     const el = document.createElement('article');
-    el.className = 'card' + (c.pendiente ? ' card--pendiente' : '');
+    el.className = 'card' + (!c.img ? ' card--pendiente' : '');
     el.style.setProperty('--d', Math.min(i, 11) * 55 + 'ms');
     el.dataset.ref = grupo.ref;
     el.tabIndex = 0;
@@ -190,14 +192,14 @@
       <div class="card__media">
         <img class="card__img" src="${srcDe(c.img)}" alt="${c.nombre} ${c.version}" loading="lazy" decoding="async">
         <div class="card__badges">
-          ${c.pendiente ? '<span class="badge badge--pend">FALTA FOTO</span>' : ''}
+          ${!c.img ? '<span class="badge badge--pend">FALTA FOTO</span>' : ''}
           ${c.destacado ? '<span class="badge badge--acc">DESTACADO</span>' : ''}
           ${c.nino ? '<span class="badge badge--kid">NIÑO</span>' : ''}
           <span class="badge">${ETIQUETA()[c.categoria]}</span>
         </div>
         <span class="card__tipo" title="${ETIQUETA()[c.categoria]}">${producto.icono[c.categoria]}</span>
         ${n > 1 ? `<span class="card__disenos">${n} diseños</span>` : ''}
-        <span class="card__zoom">${c.pendiente ? 'SIN FOTO' : (n > 1 ? 'VER LOS ' + n : 'VER FOTO')}</span>
+        <span class="card__zoom">${!c.img ? 'SIN FOTO' : (n > 1 ? 'VER LOS ' + n : 'VER FOTO')}</span>
         ${n > 1 ? `<div class="card__puntos">${grupo.items.map((_, k) =>
             `<i class="${k === 0 ? 'on' : ''}"></i>`).join('')}</div>` : ''}
       </div>

@@ -1,3 +1,11 @@
 *.HEIC
 *.heic
 motos.xlsx
+node_modules/
+.next/
+.env*
+!.env.example
+public/uploads/
+.vercel
+next-env.d.ts
+*.tsbuildinfo
