@@ -1,62 +1,61 @@
-# Catálogo de Cascos — Motos Los Ángeles
+# Catálogo — Motos Los Ángeles
 
-## Cómo abrirlo
-Doble clic en **`index.html`**. Funciona sin internet y sin instalar nada.
+La página pública es la misma de siempre. Lo nuevo es que los productos, los precios,
+las fotos y los datos del negocio ya no se editan en el código, sino desde un panel
+en **`/admin`**, protegido con contraseña.
 
-Para enviarlo a un cliente: comprime **toda la carpeta** en .zip.
-(Si mandas solo el `index.html` no se ven las fotos — necesita la carpeta `img`.)
+**Stack:** Next.js en Vercel · Neon (base de datos PostgreSQL gratis) · Vercel Blob (fotos).
 
 ---
 
-## Cómo editar precios y nombres
+## Publicarlo en Vercel (una sola vez)
 
-Todo está en un solo archivo: **`js/datos.js`**. Ábrelo con el Bloc de notas.
+1. En Vercel: **Add New → Project** e importa este repositorio.
+2. En el proyecto, ve a **Storage → Create Database → Neon** (plan gratis) y conéctalo
+   al proyecto. Vercel crea sola la variable `DATABASE_URL`.
+3. En **Storage → Create → Blob**, crea un almacén con acceso **público** y conéctalo
+   al proyecto. Vercel crea sola la variable `BLOB_READ_WRITE_TOKEN`.
+4. En **Settings → Environment Variables**, agrega `ADMIN_PASSWORD` con una contraseña larga.
+5. Vuelve a desplegar (**Deployments → Redeploy**).
 
-Cada casco es una línea así:
+La primera vez que alguien abre la página, la base de datos se crea sola y se cargan los
+134 productos que tenía el catálogo, con sus fotos.
 
-```js
-{ id: "shaft226", nombre: "SHAFT 226 Abierto", version: "Azul Pro",
-  precio: 350000, categoria: "abierto", marca: "SHAFT", img: "IMG_8399.webp" },
+---
+
+## Usar el panel (`tusitio.vercel.app/admin`)
+
+- **Cambiar un precio:** escríbelo en la casilla del producto y toca **Guardar**.
+  Puedes escribirlo con puntos (`350.000`). Si lo dejas vacío, sale «Por definir».
+- **Agregar un producto:** **+ Agregar producto**, sube la foto desde el celular y llena los datos.
+  La foto se reduce y se convierte a `.webp` antes de subirla, para que la página cargue rápido.
+- **Varios colores en una misma tarjeta:** usa exactamente el mismo *Nombre o referencia*
+  (el formulario te sugiere los que ya existen).
+- **Ocultar** quita el producto del catálogo sin borrarlo. **Mostrar** lo devuelve.
+- **↑ ↓** cambian el orden en que salen los productos («Orden sugerido»).
+- **Datos del negocio:** WhatsApp, dirección, horario, Instagram y TikTok.
+
+Los cambios se ven en la página apenas se guardan.
+
+---
+
+## Para desarrollar en tu computador
+
+```bash
+npm install
+cp .env.example .env.local   # pon DATABASE_URL y ADMIN_PASSWORD
+npm run dev
 ```
 
-| Campo       | Qué hace                                                        |
-|-------------|-----------------------------------------------------------------|
-| `nombre`    | Título grande de la tarjeta                                     |
-| `version`   | Color o acabado (línea gris debajo del nombre)                  |
-| `precio`    | Precio de salida, **sin puntos ni $** → `350000`                 |
-| `categoria` | `"abierto"`, `"abatible"` o `"integral"` — decide en qué botón de filtro aparece |
-| `marca`     | Solo aparece como texto pequeño bajo el nombre (ya no se filtra por marca) |
-| `img`       | Nombre del archivo dentro de la carpeta `img`                   |
-| `destacado` | `destacado: true` pone la etiqueta azul DESTACADO               |
-| `nino`      | `nino: true` pone la etiqueta verde NIÑO                        |
-| `activo`    | `activo: false` oculta el casco sin borrarlo                    |
+Sin `BLOB_READ_WRITE_TOKEN`, en desarrollo las fotos se guardan en `public/uploads/`.
 
-Guarda el archivo y refresca la página (F5). Listo.
+## Dónde está cada cosa
 
-### Agregar un casco nuevo
-1. Pon la foto en la carpeta `img` (formato `.webp`, `.jpg` o `.png`).
-2. Copia una línea completa de las de arriba, pégala debajo y cámbiale
-   el `id` (tiene que ser distinto a todos los demás), el nombre y la foto.
-
-### Cambiar el WhatsApp o el horario
-Está arriba del todo en `js/datos.js`, en el bloque `NEGOCIO`.
-El número va con indicativo y sin `+` ni espacios: `573108050876`.
-
----
-
-## Qué trae el catálogo
-- Un solo catálogo con 4 botones de filtro: **Todos / Integral / Abierto / Abatible**.
-- Buscador por modelo o marca, y orden por precio.
-- Clic en cualquier tarjeta → foto grande. Se pasa con las flechas ← → del
-  teclado o deslizando el dedo en el celular.
-- Botón de WhatsApp en cada casco: abre el chat con el mensaje del modelo y
-  el precio ya escritos.
-- Se adapta a celular, tablet y computador.
-- `Ctrl + P` imprime el catálogo en 3 columnas, sin menús ni animaciones.
-
----
-
-## Fotos
-Las 40 fotos originales `.HEIC` de la carpeta `Cascos` del escritorio se
-convirtieron a `.webp` (máx. 1200 px, ~80 KB cada una). Los originales
-siguen intactos donde estaban.
+```
+public/                Página pública (index.html, css, js/app.js) y fotos originales
+src/app/js/datos.js/   Genera los datos del catálogo desde la base de datos
+src/app/admin/         Panel de administración
+src/lib/db.ts          Conexión, creación de tablas y carga inicial
+src/lib/seed.json      Los 134 productos originales (solo se usan la primera vez)
+src/lib/secciones.ts   Secciones y categorías
+```
